@@ -1,0 +1,399 @@
+@import "../scss/variables";
+
+header,
+.hd-navbtn,
+.hd-dropdownContent {
+  position: fixed;
+}
+
+.hd-navdropdown {
+  position: relative;
+}
+
+header,
+header nav,
+.hd-head,
+.hd-title,
+.hd-hlogobox,
+.hd-hlogobox a,
+.hd-navbtn {
+  display: flex;
+}
+
+header {
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 70px;
+  margin-bottom: 50px;
+}
+
+//-----------------------------------
+// ---------- HEADER ICON -----------
+//-----------------------------------
+
+.hd-head,
+.hd-hlogobox,
+.hd-hlogobox a,
+.hd-navbtn {
+  justify-content: center;
+  align-items: center;
+}
+
+.hd-head {
+  flex-direction: row-reverse;
+  z-index: 4;
+
+  @mixin media-max($_key) {
+    @media screen and(max-width: map-get($breakpoints, $_key)) {
+      & {
+        @content;
+      }
+    }
+  }
+
+  .hd-hlogobox {
+    @include media-max("tablet") {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+
+      .hd-hlogo {
+        height: 65px;
+        width: 65px;
+      }
+    }
+  }
+
+  .hd-title {
+    @include media-max("tablet-large") {
+      display: none;
+    }
+  }
+}
+
+// ---------- end HEADER ICON -------
+//-----------------------------------
+
+//-----------------------------------
+//------------HEADER DARKMODE--------
+//-----------------------------------
+
+.hd-switchwrap {
+  position: absolute;
+  right: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  z-index: 5;
+}
+
+/* Slider Box */
+.hd-switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 15px;
+  border-radius: 15%;
+}
+
+/* Hide Checkbox */
+.hd-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.hd-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15%;
+  background-color: #0e0101;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.hd-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto 0;
+  border-radius: 50%;
+  background: #0e0101 url("../icons/ampoule-bleu.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input:checked + .hd-slider {
+  background-color: #edf6f9;
+}
+
+input:checked + .hd-slider:before {
+  transform: translate(13px);
+  box-shadow: 0 0 3px #edf6f9;
+  background: #edf6f9 url("../icons/ampoule.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+//--------- end HEADER DARKMODE------
+//-----------------------------------
+
+//-----------------------------------
+//------------HEADER NAV-------------
+//-----------------------------------
+
+.hd-navdropdown {
+  display: inline-block;
+  width: 100%;
+}
+
+.hd-navbtn,
+.hd-li {
+  display: block;
+}
+
+.hd-navbtn {
+  top: 20px;
+  right: 7px;
+  margin-right: 10px;
+  height: 30px;
+  width: 40px;
+  border-radius: 30%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hd-iconNav {
+  padding: 1px 2px 1px 2px;
+  margin: 4px 0 4px 0;
+  border-radius: 35%;
+}
+
+.hd-dropdownContent {
+  display: none;
+  top: 70px;
+  right: 0;
+  height: 250px;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.hd-li1 {
+  height: 20px;
+}
+
+.hd-li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 60%;
+  height: 40px;
+}
+
+.hd-li a:hover {
+  padding-bottom: 3px;
+  border-bottom: 1px solid $colorDark;
+}
+
+.hd-liHome2 {
+  height: 40px;
+}
+
+header hr {
+  width: 70%;
+}
+
+.show {
+  display: block;
+}
+
+//------------ end HEADER NAV--------
+//-----------------------------------
+
+/* --------- MEDIA QUERIES --------- */
+
+@mixin media-min($_key) {
+  @media screen and(min-width: map-get($breakpoints, $_key)) {
+    & {
+      @content;
+    }
+  }
+}
+
+header {
+  @include media-min("phone") {
+    .hd-hlogobox {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      z-index: 4;
+    }
+
+    .hd-hlogo {
+      height: 100px;
+      width: 100px;
+    }
+  }
+}
+
+header {
+  @include media-min("tablet") {
+    height: 75px;
+
+    .hd-hlogobox {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      z-index: 4;
+    }
+
+    .hd-hlogo {
+      height: 100px;
+      width: 100px;
+    }
+
+    .hd-switchwrap {
+      bottom: 17px;
+      right: 20px;
+    }
+
+    .hd-navdropdown {
+      top: 50px;
+      height: 50px;
+      width: 100%;
+    }
+
+    .hd-navbtn {
+      display: none;
+    }
+
+    .hd-dropdownContent {
+      display: flex;
+      flex-direction: row;
+      top: 50px;
+      height: 50px;
+      width: 78%;
+      padding-left: 20px;
+    }
+
+    .hd-li {
+      width: 80px;
+      height: 25px;
+      padding: 5px;
+    }
+
+    .hd-liHome1,
+    .hd-liHome2 {
+      box-shadow: 1px 1px 6px #0e0101;
+    }
+
+    .hd-liHome2 {
+      padding: 5px 15px 5px 15px;
+    }
+  }
+}
+
+header {
+  @include media-min("tablet-large") {
+    height: 150px;
+
+    .hd-hlogobox {
+      top: 20px;
+      left: 20px;
+      height: 170px;
+      width: 170px;
+    }
+
+    .hd-hlogo {
+      height: 150px;
+      width: 150px;
+    }
+
+    .hd-switchwrap {
+      bottom: 47px;
+      right: 20px;
+    }
+
+    .hd-navdropdown {
+      top: 100px;
+    }
+
+    .hd-dropdownContent {
+      display: flex;
+      top: 50px;
+      height: 100px;
+      width: 50%;
+      padding-left: 50px;
+      border-top-left-radius: 25%;
+      border-bottom-left-radius: 25%;
+    }
+
+    .hd-title {
+      display: flex;
+      position: absolute;
+      top: 70px;
+      left: 200px;
+      flex-direction: column;
+      width: 450px;
+    }
+
+    .hd-title h1 {
+      padding-bottom: 10px;
+      text-shadow: 5px 5px 6px rgb(110, 161, 105);
+    }
+
+    .hd-title h2 {
+      display: none;
+    }
+  }
+}
+
+header {
+  @include media-min("desktop") {
+    .hd-title {
+      display: flex;
+      position: absolute;
+      top: 55px;
+      left: 200px;
+      flex-direction: column;
+      width: 450px;
+    }
+
+    .hd-title h1 {
+      padding-bottom: 10px;
+    }
+  }
+}
+
+header {
+  @include media-min("desktop-large") {
+    .hd-title h2 {
+      display: block;
+    }
+  }
+}
