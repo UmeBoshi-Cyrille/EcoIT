@@ -13,8 +13,37 @@
     <link rel="stylesheet" href="{{ asset('assets/scss/footer.css') }}">
     {% block styleSheets %}{% endblock %}
 </head>
-<body>
+<body class="light theme-light">
     
+    <header>
+        <div class="hd-head">
+            <div class="hd-title">
+                <h1>Eco-Tech Eco-Web</h1>
+                <h2>Les formations web-écologique</h2>
+            </div>
+            <div class="hd-hlogobox">
+               <a href=""><img class="hd-hlogo" src="{{ asset('assets/logo/ecoIt2.png') }}" alt="logo-ecoIt"></a> 
+            </div>
+        </div>
+        <div class="hd-switchwrap">
+            <label id="switch" class="hd-switch">
+                {# <input onchange="darkmode()" id="slider" type="checkbox"> #}
+                <input type="checkbox" onchange="toggleTheme()" id="slider">
+                <span class="hd-slider hd-round"></span>
+            </label>
+        </div>
+        <nav class="hd-navdropdown">
+            <button onclick="dropdownMenu()" id="nav-btn" class="hd-navbtn" style="background-color: #c7f9cc" />
+                <div class="hd-iconNav headNav-icon1"></div>
+                <div class="hd-iconNav headNav-icon2"></div>
+                <div class="hd-iconNav headNav-icon3"></div>
+            </button>
+            <ul id="dropdown" class="hd-dropdownContent">
+                {% block navlist %}{% endblock %}
+            </ul>
+        </nav>
+    </header>
+
 
     <main>
         {% block main %}{% endblock %}

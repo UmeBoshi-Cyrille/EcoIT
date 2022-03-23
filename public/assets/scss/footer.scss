@@ -1,0 +1,183 @@
+@import "../scss/variables";
+
+footer,
+.ft-wrapper,
+.ft-head,
+.ft-hcontain,
+.ft-main,
+.ft-mcontain,
+.ft-mlistlogo,
+.ft-listtext,
+.ft-legs,
+.ft-footer,
+.ft-p {
+  display: flex;
+  margin: auto;
+  width: 100%;
+}
+
+footer,
+.ft-wrapper,
+.ft-head,
+.ft-hcontain,
+.ft-main,
+.ft-mcontain,
+.ft-mlistlogo,
+.ft-listtext,
+.ft-legs,
+.ft-footer,
+.ft-p {
+  justify-content: center;
+}
+
+footer,
+.ft-wrapper,
+.ft-head,
+.ft-hcontain,
+.ft-main,
+.ft-mcontain,
+.ft-listtext,
+.ft-legs,
+.ft-footer,
+.ft-p {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+footer {
+  margin: auto 0;
+  border-top: 2px solid $colorLight3;
+
+  .ft-hcontain {
+    margin: 50px 0 20px 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  .ft-logosite {
+    width: 150px;
+    height: 150px;
+  }
+
+  .ft-main,
+  .ft-footer {
+    padding: 50px 0 20px 0;
+  }
+
+  .ft-listtext a:hover {
+    border-bottom: 1px solid $colorDark;
+  }
+
+  .ft-legs {
+    padding-bottom: 50px;
+  }
+
+  .ft-footer {
+    justify-content: flex-end;
+    border-top: 2px solid $colorLight3;
+  }
+}
+
+.ft-main,
+.ft-mcontain {
+  padding-top: 20px;
+
+  .ft-mcontains {
+    padding-top: 50px;
+  }
+
+  .ft-mlistlogo {
+    flex-direction: row;
+  }
+
+  .ft-listtext li {
+    padding: 15px 0 15px 0;
+  }
+
+  .ft-logo {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+  }
+}
+
+.ft-imgcertification {
+  width: 250px;
+  height: 250px;
+}
+
+.ft-footer {
+  .ft-line {
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+  }
+}
+
+@mixin media-min($_key) {
+  @media screen and(min-width: map-get($breakpoints, $_key)) {
+    & {
+      @content;
+    }
+  }
+}
+
+footer .ft-wrapper {
+  @include media-min("tablet") {
+    flex-direction: row;
+    justify-content: center;
+
+    .ft-head,
+    .ft-main,
+    .ft-legs {
+      width: 30%;
+    }
+
+    .ft-head,
+    .ft-hcontain,
+    .ft-main,
+    .ft-footer {
+      margin: 0;
+    }
+
+    .ft-hcontain {
+      height: 150px;
+      width: 150px;
+    }
+
+    .ft-logosite {
+      height: 120px;
+      width: 120px;
+    }
+
+    .ft-legs {
+      margin: 50px 0 0 0;
+    }
+
+    .ft-imgcertification {
+      width: 150px;
+      height: 150px;
+    }
+
+    .ft-contains {
+      padding-top: 20px;
+    }
+  }
+}
+
+footer .ft-wrapper {
+  @include media-min("tablet-large") {
+    .ft-imgcertification,
+    .ft-hcontain {
+      height: 250px;
+      width: 250px;
+    }
+
+    .ft-logosite {
+      height: 200px;
+      width: 200px;
+    }
+  }
+}

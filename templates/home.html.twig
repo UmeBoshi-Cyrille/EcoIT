@@ -1,7 +1,91 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}EcoIT{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ asset('assets/scss/main.css') }}">
+{% endblock %}
 
-{% block body %}
+{% block navlist %}
+    <li class="hd-li1"></li>
+    <li class="hd-li hd-liHome right">
+        <a href="">Formations</a>
+    </li>
+    <li class="hd-li hd-liHome left">
+        <a href="">Postuler</a>             
+    </li>
+    <li class="hd-li hd-liHomeright">
+        <a href="">Contact</a>   
+    </li>
+    <li class="hd-li hd-liHome1 box-shadow left">
+        <a href="">S'incrire</a>           
+    </li><hr>
+    <li class="hd-li hd-liHome2 box-shadow right">
+        <a href="">Connexion</a>              
+    </li>
+{% endblock %}
 
+{% block main %}
+    <section>
+    <div class="m-headsection">
+        <h2 class="m-sectionh2">EcoIT</h2>
+        <h3 class="m-sectionh3">EcoWebLearning</h3>
+    </div>
+
+        <article>
+            <div class="m-divTitle">
+                <h2 class="m-articleh2">Qui sommes nous ?</h2>
+            </div>
+            <div class="m-articleWrap m-wrap1">
+                <p class="m-articlep m-p1">
+                C’est un fait, la crise écologique est devenue une urgence majeure.
+                le changement climatique se fait de plus en plus ressentir au fil 
+                des années. Et la révolution technologique n'est pas sans conséquences.
+                </p>
+                <p class="m-articlep m-p2">
+                En matière d’émissions de CO2, internet pollue 1.5 fois plus que le transport aérien. D’ailleurs, en 20 
+                ans, le poids d’une page web a été multiplié par 115 (source : https://www.greenit.fr/)
+                </p>
+            </div>
+            <hr>
+            <div class="m-divTitle m-titleh3">
+                <h3 class="m-articleh3">Nos objectifs</h3>
+            </div>
+            <div class="m-articleWrap m-wrap2">
+                <p class="m-articlep m-p3">
+                Face à ce constat, un organisme de formation a été fondé en 2017 : EcoIT. Son objectif est 
+                d’être une plateforme d’éducation permettant à tout instructeur expert en accessibilité et en 
+                éco-conception web de présenter des modules de cours.
+                </p>
+                <p class="m-articlep m-p4">
+                À terme, EcoIT désire devenir la référence française pour les développeurs soucieux de leur 
+                impact digital. Et pourquoi pas délivrer enfin un label officiel pour classer les sites web selon 
+                leur empreinte numérique.
+                </p>
+            </div>
+        </article>
+
+        <div class="m-btnWrap">
+            <div class="m-btnbox">
+                <button class="m-btn">S'incrire</button>
+            </div>
+            <div class="m-btnbox">
+                <button class="m-btn">Se connecter</button>
+            </div>
+        </div>
+
+        <aside>
+            <div class="aside-wrap">
+                <ul>
+                    <li class="a-li"></li>
+                    <li class="a-li"></li>
+                    <li class="a-li"></li>
+                </ul>
+            </div>
+            {# <div class="aside-wrap2">
+            <iframe src="" frameborder="0"></iframe>
+            </div> #}
+        </aside>
+    </section>
+
+    
 {% endblock %}
