@@ -1,0 +1,64 @@
+/* ----- DISPLAY BASE ----- */
+
+.flex {
+  display: flex;
+}
+
+.block {
+  display: block;
+}
+
+.i-block {
+  display: inline-block;
+}
+
+.none {
+  display: none;
+}
+
+/* ----- end DISPLAY BASE ----- */
+
+/* ----- DISPLAY LOCATION ----- */
+.flex_c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----- end DISPLAY LOCATION ----- */
+
+/* ----- DISPLAY ORIENTATION ----- */
+
+.flex_col {
+  flex-direction: column;
+}
+
+.flex_col-re {
+  flex-direction: column;
+}
+
+.flex_row {
+  flex-direction: row;
+}
+
+.flex_row-re {
+  flex-direction: row-reverse;
+}
+
+/* ----- end DISPLAY ORIENTATION ----- */
+
+/* ----- POSITION ----- */
+
+.posA {
+  position: absolute;
+}
+
+.posF {
+  position: fixed;
+}
+
+.posR {
+  position: relative;
+}
+
+/* ----- end POSITION ----- */

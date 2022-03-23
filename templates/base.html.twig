@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/scss/color.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/scss/txt.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/scss/config.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/scss/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/scss/footer.css') }}">
     {% block styleSheets %}{% endblock %}
 </head>
 <body>
