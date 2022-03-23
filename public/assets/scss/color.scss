@@ -1,0 +1,144 @@
+$breakpoints: (
+  "phone": 500px,
+  "tablet": 700px,
+  "tablet-large": 900px,
+  "desktop": 1054px,
+  "desktop-large": 1300px,
+);
+
+/* ----- COLOR VARIABLES ----- */
+
+$colorLight1: #c8f9cd;
+$colorLight2: #80ed99;
+$colorLight3: #57cc99;
+$colorDark1: #38a3a5;
+$colorDark2: #22577a;
+$colorDark: #0e0101;
+$colorWhite: #edf6f9;
+
+.theme-light {
+  --bg-key1: #c7f9cc;
+  --bg-key2: #80ed99;
+  --bg-key3: #57cc99;
+  --bg-key4: #38a3a5;
+  --bg-key5: #22577a;
+  --bg-key6: #daaf8b;
+  --bg-whitedark: #edf6f9;
+  --bg-darkwhite: #222324;
+  --font-darkwhite: #00070a;
+  --font-whitedark: #edf6f9;
+}
+
+.theme-dark {
+  --bg-key1: #445f46;
+  --bg-key2: #394b43;
+  --bg-key3: #244749;
+  --bg-key4: #143246;
+  --bg-key5: #2e5169;
+  --bg-key6: #8f6441;
+  --bg-whitedark: #222324;
+  --bg-darkwhite: #edf6f9;
+  --font-darkwhite: #edf6f9;
+  --font-whitedark: #00070a;
+}
+
+.theme-unique {
+  --bg-keyA: #445f46;
+  --bg-keyB: #394b43;
+  --bg-keyC: #244749;
+  --bg-keyD: #143246;
+  --bg-keyE: #2e5169;
+  --bg-keyF: #8f6441;
+}
+
+/* ----- end COLOR VARIABLES ----- */
+
+/* ----- COLOR BG CLASS ----- */
+
+.key-bg1 {
+  background-color: var(--bg-key1);
+}
+.key-bg2 {
+  background-color: var(--bg-key2);
+}
+.key-bg3 {
+  background-color: var(--bg-key3);
+}
+.key-bg4 {
+  background-color: var(--bg-key4);
+}
+.key-bg5 {
+  background-color: var(--bg-key5);
+}
+.key-bg6 {
+  background-color: var(--bg-key6);
+}
+.key-bgwd {
+  background-color: var(--bg-whitedark);
+}
+.key-bgdw {
+  background-color: var(--bg-darkwhite);
+}
+
+.key-bgA {
+  background-color: var(--bg-keyA);
+}
+.key-bgB {
+  background-color: var(--bg-keyB);
+}
+.key-bgC {
+  background-color: var(--bg-keyC);
+}
+.key-bgD {
+  background-color: var(--bg-keyD);
+}
+
+/* ----- end COLOR BG CLASS ----- */
+
+/* ----- COLOR FONT CLASS ----- */
+
+.key-ftwd {
+  color: var(--font-whitedark);
+}
+
+.key-ftdw {
+  color: var(--font-darkwhite);
+}
+
+/* ----- end COLOR FONT CLASS ----- */
+
+/* ----- COLOR BORDER ----- */
+
+/* ----- end COLOR BORDER ----- */
+
+/* ----- COLOR STATES ----- */
+
+@mixin media-min($_key) {
+  @media screen and(min-width: map-get($breakpoints, $_key)) {
+    & {
+      @content;
+    }
+  }
+}
+
+body {
+  @include media-min("tablet") {
+  }
+}
+
+body {
+  @include media-min("tablet-large") {
+  }
+}
+
+body {
+  @include media-min("desktop") {
+  }
+}
+
+body {
+  @include media-min("desktop-large") {
+  }
+}
+
+/* ----- end COLOR STATES ----- */

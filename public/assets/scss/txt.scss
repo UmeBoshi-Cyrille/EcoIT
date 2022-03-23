@@ -1,0 +1,87 @@
+$breakpoints: (
+  "phone": 500px,
+  "tablet": 700px,
+  "tablet-large": 900px,
+  "desktop": 1024px,
+  "desktop-large": 1200px,
+);
+
+//----- FONT VARIABLES -----
+
+@font-face {
+  font-family: Oxygen;
+  src: url("../fonts/Oxygen/Oxygen-Bold.ttf");
+}
+
+@font-face {
+  font-family: Antic-Slab;
+  src: url("../fonts/Antic_Slab/AnticSlab-Regular.ttf");
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url("../fonts/Raleway/static/Raleway-Regular.ttf");
+}
+
+$fontTitle: "Oxygen", sans-serif;
+$fontSubtitle: "Antic-Slab", sans-serif;
+$fontText: "Raleway", sans-serif;
+
+//----- end FONT VARIABLES -----
+
+/* ----- TEXT-SIZE VARIABLES ----- */
+
+$fontSize_xxl: 5em;
+$fontSize_xl4: 4.8em;
+$fontSize_xl3: 4.6em;
+$fontSize_xl2: 4.4em;
+$fontSize_xl1: 4.2em;
+$fontSize_xl: 4em;
+$fontSize_lg4: 3.8em;
+$fontSize_lg3: 3.6em;
+$fontSize_lg2: 3.4em;
+$fontSize_lg1: 3.2em;
+$fontSize_lg: 3em;
+$fontSize_md4: 2.8em;
+$fontSize_md3: 2.6em;
+$fontSize_md2: 2.4em;
+$fontSize_md1: 2.2em;
+$fontSize_md: 2em;
+$fontSize_sm4: 1.8em;
+$fontSize_sm3: 1.6em;
+$fontSize_sm2: 1.4em;
+$fontSize_sm1: 1.2em;
+$fontSize_sm: 1em;
+$fontSize_xs2: 0.9em;
+$fontSize_xs1: 0.7em;
+$fontSize_xs: 0.5em;
+
+/* ----- end TEXT VARIABLES ----- */
+
+@mixin media-min($_key) {
+  @media screen and(min-width: map-get($breakpoints, $_key)) {
+    & {
+      @content;
+    }
+  }
+}
+
+body {
+  @include media-min("tablet") {
+  }
+}
+
+body {
+  @include media-min("tablet-large") {
+  }
+}
+
+body {
+  @include media-min("desktop") {
+  }
+}
+
+body {
+  @include media-min("desktop-large") {
+  }
+}
