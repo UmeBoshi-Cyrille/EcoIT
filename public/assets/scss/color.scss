@@ -55,41 +55,41 @@ $colorWhite: #edf6f9;
 
 /* ----- COLOR BG CLASS ----- */
 
-.key-bg1 {
+.key_bg1 {
   background-color: var(--bg-key1);
 }
-.key-bg2 {
+.key_bg2 {
   background-color: var(--bg-key2);
 }
-.key-bg3 {
+.key_bg3 {
   background-color: var(--bg-key3);
 }
-.key-bg4 {
+.key_bg4 {
   background-color: var(--bg-key4);
 }
-.key-bg5 {
+.key_bg5 {
   background-color: var(--bg-key5);
 }
-.key-bg6 {
+.key_bg6 {
   background-color: var(--bg-key6);
 }
-.key-bgwd {
+.key_bgwd {
   background-color: var(--bg-whitedark);
 }
-.key-bgdw {
+.key_bgdw {
   background-color: var(--bg-darkwhite);
 }
 
-.key-bgA {
+.key_bgA {
   background-color: var(--bg-keyA);
 }
-.key-bgB {
+.key_bgB {
   background-color: var(--bg-keyB);
 }
-.key-bgC {
+.key_bgC {
   background-color: var(--bg-keyC);
 }
-.key-bgD {
+.key_bgD {
   background-color: var(--bg-keyD);
 }
 
@@ -97,11 +97,11 @@ $colorWhite: #edf6f9;
 
 /* ----- COLOR FONT CLASS ----- */
 
-.key-ftwd {
+.key_ftwd {
   color: var(--font-whitedark);
 }
 
-.key-ftdw {
+.key_ftdw {
   color: var(--font-darkwhite);
 }
 
@@ -109,9 +109,49 @@ $colorWhite: #edf6f9;
 
 /* ----- COLOR BORDER ----- */
 
+.hd-switch {
+  border: 2px solid var(--bg-key3);
+}
+
+.hd-navbtn {
+  border-color: var(--bg-key1);
+}
+
+main aside {
+  border: 2px solid var(--bg-darkwhite);
+}
+
+.ft-footer {
+  border-top: 2px solid var(--bg-key3);
+}
+
 /* ----- end COLOR BORDER ----- */
 
 /* ----- COLOR STATES ----- */
+
+.m-btnbox:hover {
+  background-color: var(--bg-key2);
+}
+
+@mixin media-max($_key) {
+  @media screen and(max-width: map-get($breakpoints, $_key)) {
+    & {
+      @content;
+    }
+  }
+}
+
+body {
+  @include media-max("tablet") {
+    header .right:hover {
+      border-right: 1px solid var(--bg-whitedark);
+    }
+
+    header .left:hover {
+      border-left: 1px solid var(--bg-whitedark);
+    }
+  }
+}
 
 @mixin media-min($_key) {
   @media screen and(min-width: map-get($breakpoints, $_key)) {
@@ -123,11 +163,29 @@ $colorWhite: #edf6f9;
 
 body {
   @include media-min("tablet") {
+    .hd-navdropdown,
+    .hd-dropdownContent {
+      background-color: var(--bg-key3);
+    }
+
+    .hd-liHome1,
+    .hd-liHome2 {
+      background-color: var(--bg-key1);
+    }
+
+    .hd-liHome1:hover,
+    .hd-liHome2:hover {
+      border: 1px solid var(--bg-whitedark);
+      background-color: $colorDark1;
+    }
   }
 }
 
 body {
   @include media-min("tablet-large") {
+    .hd-navdropdown {
+      background-color: var(--bg-key2);
+    }
   }
 }
 

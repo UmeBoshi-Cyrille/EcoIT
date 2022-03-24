@@ -6,6 +6,10 @@ $breakpoints: (
   "desktop-large": 1200px,
 );
 
+a {
+  text-decoration: none;
+}
+
 //----- FONT VARIABLES -----
 
 @font-face {
@@ -28,6 +32,22 @@ $fontSubtitle: "Antic-Slab", sans-serif;
 $fontText: "Raleway", sans-serif;
 
 //----- end FONT VARIABLES -----
+
+/* ----- FONT FAMILY ----- */
+
+.font-f1 {
+  font-family: $fontTitle;
+}
+
+.font-f2 {
+  font-family: $fontSubtitle;
+}
+
+.font-f3 {
+  font-family: $fontText;
+}
+
+/* ----- end FONT FAMILY ----- */
 
 /* ----- TEXT-SIZE VARIABLES ----- */
 
@@ -58,6 +78,33 @@ $fontSize_xs: 0.5em;
 
 /* ----- end TEXT VARIABLES ----- */
 
+/* ----- FONT SIZE ----- */
+
+.m-sectionh2 {
+  font-size: $fontSize_xxl;
+}
+
+.m-sectionh3 {
+  font-size: $fontSize_md;
+}
+
+.hd-li a,
+.m-articleh2,
+.m-articleh3,
+.m-btn {
+  font-size: $fontSize_sm2;
+}
+
+.ft-listtext a,
+.ft-p {
+  font-size: $fontSize_sm1;
+}
+
+// .hd-li a,
+.ft-p2 {
+  font-size: $fontSize_xs2;
+}
+
 @mixin media-min($_key) {
   @media screen and(min-width: map-get($breakpoints, $_key)) {
     & {
@@ -68,20 +115,46 @@ $fontSize_xs: 0.5em;
 
 body {
   @include media-min("tablet") {
+    .hd-li a {
+      font-size: $fontSize_xs2;
+    }
   }
 }
 
 body {
   @include media-min("tablet-large") {
+    .hd-title h1 {
+      font-size: $fontSize_sm3;
+    }
+
+    .hd-dropdownContent li {
+      font-size: $fontSize_md;
+    }
   }
 }
 
 body {
   @include media-min("desktop") {
+    .hd-title h1 {
+      font-size: $fontSize_md;
+    }
+
+    .hd-title h2 {
+      font-size: $fontSize_sm1;
+    }
   }
 }
 
 body {
   @include media-min("desktop-large") {
+    .hd-title h1 {
+      font-size: $fontSize_md3;
+    }
+
+    .hd-title h2 {
+      font-size: $fontSize_sm3;
+    }
   }
 }
+
+// /* ----- end FONT SIZE ----- */
