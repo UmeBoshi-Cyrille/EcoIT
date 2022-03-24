@@ -150,6 +150,10 @@ body {
     header .left:hover {
       border-left: 1px solid var(--bg-whitedark);
     }
+
+    .hd-dropdownContent {
+      background-color: var(--bg-key3);
+    }
   }
 }
 
@@ -163,19 +167,12 @@ body {
 
 body {
   @include media-min("tablet") {
-    .hd-navdropdown,
-    .hd-dropdownContent {
+    .hd-navdropdown {
       background-color: var(--bg-key3);
     }
 
-    .hd-liHome1,
-    .hd-liHome2 {
-      background-color: var(--bg-key1);
-    }
-
-    .hd-liHome1:hover,
-    .hd-liHome2:hover {
-      border: 1px solid var(--bg-whitedark);
+    .hd-homeli:hover {
+      border: 1px solid var(--bg-darkwhite);
       background-color: $colorDark1;
     }
   }
@@ -184,7 +181,7 @@ body {
 body {
   @include media-min("tablet-large") {
     .hd-navdropdown {
-      background-color: var(--bg-key2);
+      background-color: var(--bg-key3);
     }
   }
 }

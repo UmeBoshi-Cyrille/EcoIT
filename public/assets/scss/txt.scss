@@ -113,11 +113,11 @@ $fontSize_xs: 0.5em;
 body {
   @include media-min("tablet") {
     .hd-li a {
-      font-size: $fontSize_sm1;
+      font-size: $fontSize_sm;
     }
 
     .nav_a {
-      font-size: $fontSize_sm2;
+      font-size: $fontSize_sm1;
       font-weight: bold;
     }
   }
@@ -126,11 +126,11 @@ body {
 body {
   @include media-min("tablet-large") {
     .hd-title h1 {
-      font-size: $fontSize_sm3;
+      font-size: $fontSize_md4;
     }
 
     .hd-dropdownContent li {
-      font-size: $fontSize_md;
+      font-size: $fontSize_sm;
     }
   }
 }
@@ -142,11 +142,12 @@ body {
     }
 
     .hd-title h1 {
-      font-size: $fontSize_md;
+      font-size: $fontSize_md4;
     }
 
     .hd-title h2 {
       font-size: $fontSize_sm1;
+      font-style: italic;
     }
   }
 }
@@ -154,7 +155,7 @@ body {
 body {
   @include media-min("desktop-large") {
     .hd-title h1 {
-      font-size: $fontSize_md3;
+      font-size: $fontSize_md4;
     }
 
     .hd-title h2 {
