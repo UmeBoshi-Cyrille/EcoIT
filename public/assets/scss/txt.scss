@@ -81,14 +81,11 @@ $fontSize_xs: 0.5em;
 /* ----- FONT SIZE ----- */
 
 .m-sectionh2 {
-  font-size: $fontSize_xxl;
-}
-
-.m-sectionh3 {
-  font-size: $fontSize_md;
+  font-size: $fontSize_xl;
 }
 
 .hd-li a,
+.m-sectionh3,
 .m-articleh2,
 .m-articleh3,
 .m-btn {
@@ -135,6 +132,10 @@ body {
 
 body {
   @include media-min("desktop") {
+    .m-sectionh2 {
+      font-size: $fontSize_xxl;
+    }
+
     .hd-title h1 {
       font-size: $fontSize_md;
     }

@@ -39,6 +39,8 @@ $breakpoints: (
 
 .hd_logobox {
   position: absolute;
+  top: 10px;
+  left: 10px;
   border-radius: 50%;
   z-index: 4;
 }
@@ -96,8 +98,6 @@ body {
   @include media-max("tablet") {
     /* ----- LOGO BASE ----- */
     .hd_logobox {
-      top: 10px;
-      left: 10px;
       height: 80px;
       width: 80px;
     }
