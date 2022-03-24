@@ -113,11 +113,13 @@ $colorWhite: #edf6f9;
   border: 2px solid var(--bg-key3);
 }
 
-.hd-navbtn {
+.hd-navbtn,
+.home-btn {
   border-color: var(--bg-key1);
 }
 
-main aside {
+.home_aside,
+.home_li-img {
   border: 2px solid var(--bg-darkwhite);
 }
 
@@ -129,7 +131,7 @@ main aside {
 
 /* ----- COLOR STATES ----- */
 
-.m-btnbox:hover {
+.home-btnbox:hover {
   background-color: var(--bg-key2);
 }
 

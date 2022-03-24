@@ -10,45 +10,6 @@ a {
   text-decoration: none;
 }
 
-//----- FONT VARIABLES -----
-
-@font-face {
-  font-family: Oxygen;
-  src: url("../fonts/Oxygen/Oxygen-Bold.ttf");
-}
-
-@font-face {
-  font-family: Antic-Slab;
-  src: url("../fonts/Antic_Slab/AnticSlab-Regular.ttf");
-}
-
-@font-face {
-  font-family: Raleway;
-  src: url("../fonts/Raleway/static/Raleway-Regular.ttf");
-}
-
-$fontTitle: "Oxygen", sans-serif;
-$fontSubtitle: "Antic-Slab", sans-serif;
-$fontText: "Raleway", sans-serif;
-
-//----- end FONT VARIABLES -----
-
-/* ----- FONT FAMILY ----- */
-
-.font-f1 {
-  font-family: $fontTitle;
-}
-
-.font-f2 {
-  font-family: $fontSubtitle;
-}
-
-.font-f3 {
-  font-family: $fontText;
-}
-
-/* ----- end FONT FAMILY ----- */
-
 /* ----- TEXT-SIZE VARIABLES ----- */
 
 $fontSize_xxl: 5em;
@@ -78,29 +39,90 @@ $fontSize_xs: 0.5em;
 
 /* ----- end TEXT VARIABLES ----- */
 
+//----- FONT VARIABLES -----
+
+@font-face {
+  font-family: Oxygen;
+  src: url("../fonts/Oxygen/Oxygen-Bold.ttf");
+}
+
+@font-face {
+  font-family: Antic-Slab;
+  src: url("../fonts/Antic_Slab/AnticSlab-Regular.ttf");
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url("../fonts/Raleway/static/Raleway-Regular.ttf");
+}
+
+$fontTitle: "Oxygen", sans-serif;
+$fontSubtitle: "Antic-Slab", sans-serif;
+$fontText: "Raleway", sans-serif;
+
+/* ----- end FONT VARIABLES ----- */
+
+/* ----- FONT FAMILY ----- */
+
+.font-f1 {
+  font-family: $fontTitle;
+}
+
+.font-f2 {
+  font-family: $fontSubtitle;
+}
+
+.font-f3 {
+  font-family: $fontText;
+}
+
+/* ----- end FONT FAMILY ----- */
+
 /* ----- FONT SIZE ----- */
 
-.m-sectionh2 {
+.home_section-h2 {
   font-size: $fontSize_xl;
 }
 
+.home_aside-h2,
+.home_partner-title {
+  font-size: $fontSize_md;
+}
+
 .hd-li a,
-.m-sectionh3,
-.m-articleh2,
-.m-articleh3,
-.m-btn {
+.home_section-h3,
+.home-article-h2,
+.home_article-h3,
+.home-btn {
   font-size: $fontSize_sm2;
 }
 
+.home_li-h2,
 .ft-listtext a,
 .ft-p {
   font-size: $fontSize_sm1;
 }
 
-// .hd-li a,
+.home_partner-h3,
 .ft-p2 {
   font-size: $fontSize_xs2;
 }
+
+/* ----- end FONT SIZE ----- */
+
+/* ----- TEXT DECORATION ----- */
+
+.home_partner-title {
+  text-decoration: underline;
+}
+
+.home_partner-h3 {
+  font-weight: bold;
+}
+
+/* ----- end TEXT DECORATION ----- */
+
+/* ----- MEDIA QUERIES ----- */
 
 @mixin media-min($_key) {
   @media screen and(min-width: map-get($breakpoints, $_key)) {
@@ -116,7 +138,7 @@ body {
       font-size: $fontSize_sm;
     }
 
-    .nav_a {
+    header .nav_a {
       font-size: $fontSize_sm1;
       font-weight: bold;
     }
@@ -137,7 +159,7 @@ body {
 
 body {
   @include media-min("desktop") {
-    .m-sectionh2 {
+    .home_section-h2 {
       font-size: $fontSize_xxl;
     }
 
@@ -164,4 +186,4 @@ body {
   }
 }
 
-// /* ----- end FONT SIZE ----- */
+/* ----- end MEDIA QUERIES ----- */
