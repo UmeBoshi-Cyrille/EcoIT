@@ -1,45 +1,54 @@
-@import "../scss/variables";
+$breakpoints: (
+  "phone": 500px,
+  "tablet": 700px,
+  "tablet-large": 900px,
+  "desktop": 1054px,
+  "desktop-large": 1300px,
+);
+
+$colorLight1: #c8f9cd;
+$colorLight2: #80ed99;
+$colorLight3: #57cc99;
+$colorDark1: #38a3a5;
+$colorDark2: #22577a;
+$colorDark: #0e0101;
+$colorWhite: #edf6f9;
 
 footer,
-.ft-wrapper,
-.ft-head,
-.ft-hcontain,
-.ft-main,
-.ft-mcontain,
-.ft-mlistlogo,
-.ft-listtext,
-.ft-legs,
-.ft-footer,
-.ft-p {
+.ft_wrapper,
+.ft_head,
+.ft_main,
+.ft_main-contain,
+.ft_list-text,
+.ft_legs,
+.ft_footer,
+.ft_p {
   display: flex;
   margin: auto;
   width: 100%;
 }
 
 footer,
-.ft-wrapper,
-.ft-head,
-.ft-hcontain,
-.ft-main,
-.ft-mcontain,
-.ft-mlistlogo,
-.ft-listtext,
-.ft-legs,
-.ft-footer,
-.ft-p {
+.ft_wrapper,
+.ft_head,
+.ft_main,
+.ft_main-contain,
+.ft_list-text,
+.ft_legs,
+.ft_footer,
+.ft_p {
   justify-content: center;
 }
 
 footer,
-.ft-wrapper,
-.ft-head,
-.ft-hcontain,
-.ft-main,
-.ft-mcontain,
-.ft-listtext,
-.ft-legs,
-.ft-footer,
-.ft-p {
+.ft_wrapper,
+.ft_head,
+.ft_main,
+.ft_main-contain,
+.ft_list-text,
+.ft_legs,
+.ft_footer,
+.ft_p {
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -49,67 +58,40 @@ footer {
   margin: auto 0;
   border-top: 2px solid $colorLight3;
 
-  .ft-hcontain {
-    margin: 50px 0 20px 0;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-  }
-
-  .ft-logosite {
-    width: 150px;
-    height: 150px;
-  }
-
-  .ft-main,
-  .ft-footer {
+  .ft_main,
+  .ft_footer {
     padding: 50px 0 20px 0;
   }
 
-  .ft-listtext a:hover {
+  .ft_list-text a:hover {
     border-bottom: 1px solid $colorDark;
   }
 
-  .ft-legs {
+  .ft_legs {
     padding-bottom: 50px;
   }
 
-  .ft-footer {
-    justify-content: flex-end;
+  .ft_footer {
+    justify-content: flex_end;
     border-top: 2px solid $colorLight3;
   }
 }
 
-.ft-main,
-.ft-mcontain {
+.ft_main,
+.ft_main-contain {
   padding-top: 20px;
 
-  .ft-mcontains {
+  .ft_main-contains {
     padding-top: 50px;
   }
 
-  .ft-mlistlogo {
-    flex-direction: row;
-  }
-
-  .ft-listtext li {
+  .ft_list-text li {
     padding: 15px 0 15px 0;
   }
-
-  .ft-logo {
-    width: 50px;
-    height: 50px;
-    margin: 10px;
-  }
 }
 
-.ft-imgcertification {
-  width: 250px;
-  height: 250px;
-}
-
-.ft-footer {
-  .ft-line {
+.ft_footer {
+  .ft_line {
     padding-bottom: 10px;
     margin-bottom: 30px;
     border-bottom: 1px solid;
@@ -124,60 +106,30 @@ footer {
   }
 }
 
-footer .ft-wrapper {
+.ft_wrapper {
   @include media-min("tablet") {
     flex-direction: row;
     justify-content: center;
 
-    .ft-head,
-    .ft-main,
-    .ft-legs {
+    .ft_head,
+    .ft_main,
+    .ft_legs {
       width: 30%;
     }
 
-    .ft-head,
-    .ft-hcontain,
-    .ft-main,
-    .ft-footer {
+    .ft_head,
+    .ft_logobox,
+    .ft_main,
+    .ft_footer {
       margin: 0;
     }
 
-    .ft-hcontain {
-      height: 150px;
-      width: 150px;
-    }
-
-    .ft-logosite {
-      height: 120px;
-      width: 120px;
-    }
-
-    .ft-legs {
+    .ft_legs {
       margin: 50px 0 0 0;
     }
 
-    .ft-imgcertification {
-      width: 150px;
-      height: 150px;
-    }
-
-    .ft-contains {
+    .ft_contains {
       padding-top: 20px;
-    }
-  }
-}
-
-footer .ft-wrapper {
-  @include media-min("tablet-large") {
-    .ft-imgcertification,
-    .ft-hcontain {
-      height: 250px;
-      width: 250px;
-    }
-
-    .ft-logosite {
-      height: 200px;
-      width: 200px;
     }
   }
 }

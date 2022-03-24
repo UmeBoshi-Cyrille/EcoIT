@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="{{ asset('assets/scss/color.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/scss/txt.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/scss/config.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/scss/image.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/scss/header.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/scss/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/scss/switch.css') }}">
     {% block styleSheets %}{% endblock %}
 </head>
 <body class="light theme-light">
@@ -21,17 +23,11 @@
                 <h1>Eco-Tech Eco-Web</h1>
                 <h2>Les formations web-écologique</h2>
             </div>
-            <div class="hd-hlogobox">
-               <a href=""><img class="hd-hlogo" src="{{ asset('assets/logo/ecoIt2.png') }}" alt="logo-ecoIt"></a> 
+            <div class="hd_logobox">
+               <a href=""><img class="hd_logo" src="{{ asset('assets/storage/logo/ecoIt2.png') }}" alt="logo-ecoIt"></a> 
             </div>
         </div>
-        <div class="hd-switchwrap">
-            <label id="switch" class="hd-switch">
-                {# <input onchange="darkmode()" id="slider" type="checkbox"> #}
-                <input type="checkbox" onchange="toggleTheme()" id="slider">
-                <span class="hd-slider hd-round"></span>
-            </label>
-        </div>
+        {% include "_modules/_switch.html.twig" %}
         <nav class="hd-navdropdown">
             <button onclick="dropdownMenu()" id="nav-btn" class="hd-navbtn" style="background-color: #c7f9cc" />
                 <div class="hd-iconNav headNav-icon1"></div>
@@ -50,7 +46,7 @@
     </main>
 
     <footer>
-        {% include "_footer.html.twig" %}
+        {% include "base/_footer.html.twig" %}
     </footer>
 
     {% block javascripts %}{% endblock %}
