@@ -113,7 +113,12 @@ $fontSize_xs: 0.5em;
 body {
   @include media-min("tablet") {
     .hd-li a {
-      font-size: $fontSize_xs2;
+      font-size: $fontSize_sm1;
+    }
+
+    .nav_a {
+      font-size: $fontSize_sm2;
+      font-weight: bold;
     }
   }
 }
