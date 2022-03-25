@@ -2,160 +2,183 @@
 
 {% block title %}EcoIT{% endblock %}
 {% block styleSheets %}
-<link rel="stylesheet" href="{{ asset('assets/pages/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/pages/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/states/home_states.css') }}">
 {% endblock %}
 
 {% block navlist %}
     <li class="hd-li1"></li>
-    <li class="hd-li hd-liHome right font-f1">
-        <a class="key_homedw" href="">Formations</a>
+    <li class="hd-li right font-f1">
+        <a class="key_ftdw" href="">Formations</a>
     </li>
-    <li class="hd-li hd-liHome lehome font-f1">
-        <a class="key_homedw" href="">Postuler</a>             
+    <li class="hd-li left font-f1">
+        <a class="key_ftdw" href="">Postuler</a>             
     </li>
-    <li class="hd-li hd-liHomeright font-f1">
-        <a class="key_homedw" href="">Contact</a>   
+    <li class="hd-li right font-f1">
+        <a class="key_ftdw" href="">Contact</a>   
     </li>
-    <li class="hd-li hd-homeli lehome font-f1 key_bg3">
-        <a class="nav_a key_homedw" href="">S'incrire</a>           
+    <li class="hd-li hd_home-li left font-f1 key_bg3">
+        <a class="nav_a key_ftdw" href="">S'incrire</a>           
     </li><hr>
-    <li class="hd-li hd-homeli right font-f1 key_bg3">
-        <a class="nav_a key_homedw" href="">Connexion</a>              
+    <li class="hd-li hd_home-li right font-f1 key_bg3">
+        <a class="nav_a key_ftdw" href="">Connexion</a>              
     </li>
 {% endblock %}
 
 {% block main %}
-    
-    <section class="key_homedw">
-    <div class="home_head">
-        <h2 class="home_section-h2 font-f1">EcoIT</h2>
-        <h3 class="home_section-h3 font-f2">EcoWebLearning</h3>
-    </div>
+    <section class="home_main-wrapper">
+        <div class="home_section-wrap">
+            <div class="home_head-box">
+                <div class="home_head-title">
+                    <h2 class="home_head-h2 font-f1">EcoIT</h2>
+                    <h3 class="home_head-h3 font-f2">EcoWebLearning</h3>
+                </div>
+                <div class="home_head-imgbox">
+                    <img class="home_img1" src="{{ asset('assets/storage/image/greenRocket.png') }}" alt="">
+                </div>
+            </div>
 
-        <article>
-            <div class="home-head">
-                <h2 class="home_article-h2 font-f1">Qui sommes nous ?</h2>
-            </div>
-            <div class="m-articleWrap m-wrap1">
-                <p class="home_article-p home-p1 font-f3 key_bg3">
-                C’est un fait, la crise écologique est devenue une urgence majeure.
-                le changement climatique se fait de plus en plus ressentir au fil 
-                des années. Et la révolution technologique n'est pas sans conséquences.
-                </p>
-                <p class="home_article-p home-p2 font-f3 key_bg3">
-                En matière d’émissions de CO2, internet pollue 1.5 fois plus que le transport aérien. D’ailleurs, en 20 
-                ans, le poids d’une page web a été multiplié par 115 (source : https://www.greenit.fr/)
-                </p>
-            </div>
-            <hr>
-            <div class="m-divTitle m-titleh3">
-                <h3 class="home_article-h3 font-f1">Nos objectifs</h3>
-            </div>
-            <div class="m-articleWrap m-wrap2">
-                <p class="home_article-p home-p3 font-f3 key_bg4">
-                Face à ce constat, un organisme de formation a été fondé en 2017 : EcoIT. Son objectif est 
-                d’être une plateforme d’éducation permettant à tout instructeur expert en accessibilité et en 
-                éco-conception web de présenter des modules de cours.
-                </p>
-                <p class="home_article-p home-p4 font-f3 key_bg4">
-                À terme, EcoIT désire devenir la référence française pour les développeurs soucieux de leur 
-                impact digital. Et pourquoi pas délivrer enfin un label officiel pour classer les sites web selon 
-                leur empreinte numérique.
-                </p>
-            </div>
-        </article>
+            <article>
+                <div class="home_articles">
+                    <div class="home_article-title">
+                        <h2 class="home_article-h article-h2 font-f1 key_ftdw">Qui sommes nous ?</h2>
+                    </div>
+                    <div class="home_article-wrap">
+                        <p class="home_article-p home-p1 font-f3 key_bg3">
+                        C’est un fait, la crise écologique est devenue une urgence majeure.
+                        le changement climatique se fait de plus en plus ressentir au fil 
+                        des années. Et la révolution technologique n'est pas sans conséquences.
+                        </p>
+                        <p class="home_article-p home-p2 font-f3 key_bg3">
+                        En matière d’émissions de CO2, internet pollue 1.5 fois plus que le transport aérien. D’ailleurs, en 20 
+                        ans, le poids d’une page web a été multiplié par 115 (source : https://www.greenit.fr/)
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="home_articles">
+                    {# <div class="home_article-imgbox"> #}
+                    {# </div> #}
+                    <div class="home_article-title article-h3">
+                        <img class="home_article-img" src="{{ asset('assets/storage/image/lowpolyEarth.png') }}" alt="lowpoly-Earth">
+                        <h3 class="home_article-h  font-f1 key_ftdw">Nos objectifs</h3>
+                    </div>
+                    <div class="home_article-wrap">
+                        <p class="home_article-p home-p3 font-f3 key_bg4">
+                        Face à ce constat, un organisme de formation a été fondé en 2017 : EcoIT. Son objectif est 
+                        d’être une plateforme d’éducation permettant à tout instructeur expert en accessibilité et en 
+                        éco-conception web de présenter des modules de cours.
+                        </p>
+                        <p class="home_article-p home-p4 font-f3 key_bg4">
+                        À terme, EcoIT désire devenir la référence française pour les développeurs soucieux de leur 
+                        impact digital. Et pourquoi pas délivrer enfin un label officiel pour classer les sites web selon 
+                        leur empreinte numérique.
+                        </p>
+                    </div>
+                </div>
+            </article>
 
-        <div class="home_btn-wrap">
-            <div class="home-btnbox">
-                <button class="home-btn key_bg3 key_homedw">S'incrire</button>
-            </div>
-            <div class="home-btnbox">
-                <button class="home-btn key_bg3 key_homedw">Se connecter</button>
+            <div class="home_btn-wrap">
+                <div class="home-btnbox">
+                    <button class="home-btn key_bg3 key_homedw">S'incrire</button>
+                </div>
+                <div class="home-btnbox">
+                    <button class="home-btn key_bg3 key_homedw">Se connecter</button>
+                </div>
             </div>
         </div>
-
         
+        <aside>
+            <div class="img_box-lesson">
+                <img src="{{ asset('assets/storage/image/astronaut.png') }}" alt="Train">
+            </div>
+            <div class="aside-wrapper">
+                <div class="home_aside-title">
+                    <h2 class="home_aside-h2 font-f1">Dernières formations ajoutées</h2>
+                </div>
+                <div class="home_aside-wrap">
+                    <ul class="home_aside-ul">
+                        <li class="home_aside-li key_bg2">
+                            <div class="home_aside-box">
+                                <div class="home_li-indicator key_bg5"></div>
+                                <div class="home_li-img">
+                                    <img src="" alt="instructeur photo">
+                                </div>
+                            </div>
+                            <div class="home_li-text">
+                                <h2 class="home_li-h2 font-f2">Titre de la formation</h2>
+                                <p class="home_li-p font-f3">
+                                    Brève explication de la formation 
+                                    Brève explication de la formation
+                                </p>
+                            </div>
+                        </li>
+                        <li class="home_aside-li key_bg2">
+                            <div class="home_aside-box">
+                                <div class="home_li-indicator key_bg5"></div>
+                                <div class="home_li-img">
+                                    <img src="" alt="instructeur photo">
+                                </div>
+                            </div>
+                            <div class="home_li-text">
+                                <h2 class="home_li-h2 font-f2">Titre de la formation</h2>
+                                <p class="home_li-p font-f3">
+                                    Brève explication de la formation 
+                                    Brève explication de la formation
+                                </p>
+                            </div>
+                        </li>
+                        <li class="home_aside-li key_bg2">
+                            <div class="home_aside-box">
+                                <div class="home_li-indicator key_bg5"></div>
+                                <div class="home_li-img">
+                                    <img src="" alt="instructeur photo">
+                                </div>
+                            </div>
+                            <div class="home_li-text">
+                                <h2 class="home_li-h2">Titre de la formation</h2>
+                                <p class="home_li-p">
+                                    Brève explication de la formation 
+                                    Brève explication de la formation
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
     </section>
-
-    <aside class="home_aside">
-        <div class="home_aside-title">
-             <h2 class="home_aside-h2">Dernières formations ajoutées</h2>
-        </div>
-        <div class="home_aside-wrap">
-            <ul class="home_aside-ul">
-                <li class="home_aside-li key_bg2">
-                    <div class="home_li-text">
-                        <h2 class="home_li-h2">Titre de la formation</h2>
-                        <p class="home_li-p">
-                            Brève explication de la formation 
-                            Brève explication de la formation
-                        </p>
-                    </div>
-                    <div class="home_aside-box">
-                        <div class="home_li-indicator key_bg5"></div>
-                        <div class="home_li-img">
-                            <img src="" alt="instructeur photo">
-                        </div>
-                    </div>
-                </li>
-                <li class="home_aside-li key_bg2">
-                    <div class="home_li-text">
-                        <h2 class="home_li-h2">Titre de la formation</h2>
-                        <p class="home_li-p">
-                            Brève explication de la formation
-                            Brève explication de la formation
-                        </p>
-                    </div>
-                    <div class="home_aside-box">
-                        <div class="home_li-indicator key_bg5"></div>
-                        <div class="home_li-img">
-                            <img src="" alt="instructeur photo">
-                        </div>
-                    </div>
-                </li>
-                <li class="home_aside-li key_bg2">
-                    <div class="home_li-text">
-                        <h2 class="home_li-h2">Titre de la formation</h2>
-                        <p class="home_li-p">
-                            Brève explication de la formation
-                            Brève explication de la formation
-                        </p>
-                    </div>
-                    <div class="home_aside-box">
-                        <div class="home_li-indicator key_bg5"></div>
-                        <div class="home_li-img">
-                            <img src="" alt="instructeur photo">
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </aside>
     
     <div class="home_video-contain key_bg1 line">
         <div class="home_video-box">
-            <iframe width="90%" height="220" 
-            src="https://www.youtube.com/embed/N_Hqq3NT24w" 
+            <iframe class="home_video" 
+            src="https://www.youtube.com/embed/6YMRB4bgQ-o" 
             title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-            gyroscope; picture-in-picture" allowfullscreen>
+            allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
+            {# <iframe class="home_video"
+                src="https://www.youtube.com/embed/oMJJL7JyX4E" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; 
+                encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe> #}
         </div>
         <div class="home_video-box">
-            <iframe width="90%" height="220" 
-            src="https://www.youtube.com/embed/N_Hqq3NT24w" 
-            title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-            gyroscope; picture-in-picture" allowfullscreen>
+            <iframe class="home_video"  
+                src="https://www.youtube.com/embed/N_Hqq3NT24w" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
         </div>
     </div>
 
     <section class="home_section">
-        <h2 class="home_partner-title key_ftdw ">Partenaires</h2>
+        <h2 class="home_partner-title key_ftdw font-f3">Partenaires</h2>
         <div class="home_logo-box">
             <ul class="home_listlogo">
-                <li>
+                <li class="partner-li">
                     <a href="#">
                         <img class="home_partnerlogo" 
                              src="{{ asset('assets/storage/logo/goodEarth.png') }}" 
@@ -163,7 +186,7 @@
                     </a>
                     <h3 class="home_partner-h3 key_ftdw font-f1">GoodEarth</h3>
                 </li>
-                <li>
+                <li class="partner-li">
                     <a href="#">
                         <img class="home_partnerlogo" 
                              src="{{ asset('assets/storage/logo/montagne.png') }}" 
@@ -171,7 +194,7 @@
                     </a>
                     <h3 class="home_partner-h3 key_ftdw font-f1">Venture</h3>
                 </li>
-                <li>
+                <li class="partner-li">
                     <a href="#">
                         <img class="home_partnerlogo" 
                              src="{{ asset('assets/storage/logo/peking-duck.png') }}" 
@@ -183,7 +206,7 @@
         </div>
         <div class="home_logo-box">
             <ul class="home_listlogo">
-                <li>
+                <li class="partner-li">
                     <a href="#">
                         <img class="home_partnerlogo" 
                              src="{{ asset('assets/storage/logo/pieds.png') }}" 
@@ -191,7 +214,7 @@
                     </a>
                     <h3 class="home_partner-h3 key_ftdw font-f1">Mankind</h3>
                 </li>
-                <li>
+                <li class="partner-li">
                     <a href="#">
                         <img class="home_partnerlogo" 
                              src="{{ asset('assets/storage/logo/ours.png') }}" 
@@ -199,7 +222,7 @@
                     </a>
                     <h3 class="home_partner-h3 key_ftdw font-f1">Oursar</h3>
                 </li>
-                <li>
+                <li class="partner-li">
                     <a href="#">
                         <img class="home_partnerlogo" 
                              src="{{ asset('assets/storage/logo/crabe.png') }}" 
@@ -211,7 +234,7 @@
         </div>
         <div class="home_logo-box">
             <ul class="home_listlogo">
-                <li>
+                <li class="partner-li">
                     <a href="#">
                         <img class="home_partnerlogo" 
                              src="{{ asset('assets/storage/logo/fallen.png') }}" 
@@ -219,7 +242,7 @@
                     </a>
                     <h3 class="home_partner-h3 key_ftdw font-f1">Fallen</h3>
                 </li>
-                <li>
+                <li class="partner-li">
                     <a href="#">
                         <img class="home_partnerlogo" 
                              src="{{ asset('assets/storage/logo/bambou.png') }}" 
@@ -227,7 +250,7 @@
                     </a>
                     <h3 class="home_partner-h3 key_ftdw font-f1">Stabilize</h3>
                 </li>
-                <li>
+                <li class="partner-li">
                     <a href="#">
                         <img class="home_partnerlogo" 
                              src="{{ asset('assets/storage/logo/canard.png') }}" 

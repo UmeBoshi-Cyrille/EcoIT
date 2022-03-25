@@ -80,20 +80,22 @@ $fontText: "Raleway", sans-serif;
 
 /* ----- FONT SIZE ----- */
 
-.home_section-h2 {
+.home_head-h2 {
   font-size: $fontSize_xl;
 }
 
-.home_aside-h2,
 .home_partner-title {
   font-size: $fontSize_md;
 }
 
+.home_article-h {
+  font-size: $fontSize_sm3;
+}
+
 .hd-li a,
-.home_section-h3,
-.home-article-h2,
-.home_article-h3,
-.home-btn {
+.home_head-h3,
+.home-btn,
+.home_aside-h2 {
   font-size: $fontSize_sm2;
 }
 
@@ -116,6 +118,8 @@ $fontText: "Raleway", sans-serif;
   text-decoration: underline;
 }
 
+.home_aside-h2,
+.home_li-h2,
 .home_partner-h3 {
   font-weight: bold;
 }
@@ -154,6 +158,10 @@ body {
     .hd-dropdownContent li {
       font-size: $fontSize_sm;
     }
+
+    .home_section .home_partner-h3 {
+      font-size: $fontSize_sm;
+    }
   }
 }
 
@@ -182,6 +190,10 @@ body {
 
     .hd-title h2 {
       font-size: $fontSize_sm3;
+    }
+
+    .home_section .home_partner-h3 {
+      font-size: $fontSize_sm1;
     }
   }
 }

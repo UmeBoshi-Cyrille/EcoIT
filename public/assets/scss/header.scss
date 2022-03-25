@@ -126,7 +126,7 @@ header {
   border-bottom: 1px solid $colorDark;
 }
 
-.hd-liHome2 {
+.hd_home-li {
   height: 40px;
 }
 
@@ -173,9 +173,10 @@ header {
       display: flex;
       flex-direction: row;
       top: 50px;
+      right: 20px;
       height: 50px;
       width: 78%;
-      // padding-left: 20px;
+      padding-right: 5px;
     }
 
     .hd-li {
@@ -184,9 +185,10 @@ header {
       padding: 5px;
     }
 
-    .hd-homeli {
+    .hd_home-li {
       box-shadow: 1px 1px 6px #0e0101;
-      padding: 5px 15px 5px 15px;
+      padding: 0px 15px 0px 15px;
+      margin-right: 5px;
     }
 
     hr {
@@ -248,7 +250,7 @@ header {
     }
 
     .hd-dropdownContent {
-      width: 50%;
+      width: 60%;
     }
   }
 }

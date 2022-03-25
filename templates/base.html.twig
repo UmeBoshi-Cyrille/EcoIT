@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="{{ asset('assets/scss/switch.css') }}">
     {% block styleSheets %}{% endblock %}
 </head>
-<body class="light theme-light key_bgwd">
+<body class="light theme-light key_bgwd key_ftdw">
     
-    <header class="key_bg1">
+    <header class="key_bg1 z5">
         <div class="hd-head">
             <div class="hd-title">
                 <h1 class="font-f1 key_ftdw">Eco-Tech Eco-Web</h1>
@@ -29,10 +29,10 @@
         </div>
         {% include "_modules/_switch.html.twig" %}
         <nav class="hd-navdropdown">
-            <button onclick="dropdownMenu()" id="nav-btn" class="hd-navbtn key_bg1" style="background-color: #c7f9cc" />
-                <div class="hd-iconNav headNav-icon1 key_bgwd"></div>
-                <div class="hd-iconNav headNav-icon2 key_bgwd"></div>
-                <div class="hd-iconNav headNav-icon3 key_bgwd"></div>
+            <button onclick="dropdownMenu()" id="nav-btn" class="hd-navbtn key_bg2" style="background-color: #c7f9cc" />
+                <div class="hd-iconNav headNav-icon1 key_bgdw"></div>
+                <div class="hd-iconNav headNav-icon2 key_bgdw"></div>
+                <div class="hd-iconNav headNav-icon3 key_bgdw"></div>
             </button>
             <ul id="dropdown" class="hd-dropdownContent">
                 {% block navlist %}{% endblock %}

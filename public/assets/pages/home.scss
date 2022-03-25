@@ -1,7 +1,14 @@
 main,
-.main-wrapper,
+article,
+aside,
+.home_main-wrapper,
+.home_section-wrap,
+.home_head-box,
+.home_head-imgbox,
+.home_articles,
+.home_article-title,
 .home_btn-wrap,
-.home_aside,
+.aside-wrapper,
 .home_aside-title,
 .home_aside-wrap,
 .home_aside-ul,
@@ -10,25 +17,43 @@ main,
 .home_video-contain,
 .home_video-box,
 .home_section,
+.home_logo-box,
 .home_listlogo {
   display: flex;
 }
 
 main,
+article,
+aside,
+.home_main-wrapper,
+.home_section_wrap,
+.home_head-box,
+.home_head-imgbox,
+.home_article-title,
 .home_btn-wrap,
-.home_aside,
+.aside-wrapper,
 .home_aside-title,
 .home_aside-wrap,
+.home_aside-ul,
 .home_aside-box,
+.home_video-contain,
 .home_video-box,
+.home_section,
+.home_logo-box,
 .home_listlogo {
   justify-content: center;
   align-items: center;
 }
 
 main,
+article,
+aside,
+.home_main-wrapper,
+.home_section-wrap,
+.home_head-box,
+.home_articles,
 .home_btn-wrap,
-.home_aside,
+.aside-wrapper,
 .home_aside-ul,
 .home_aside-box,
 .home_video-contain,
@@ -42,26 +67,42 @@ main {
   padding: 20px 0 50px 0;
 }
 
-/* ----- SECTION ----- */
+.home_main-wrapper {
+  width: 90%;
+}
 
-section {
+/* ----- SECTION INTRODUCTION----- */
+
+.home_section-wrap {
   width: 90%;
   padding-top: 50px;
 
-  h2,
-  h3 {
+  .home_head-h2,
+  .home_head-h3 {
     padding-top: 5px;
     padding-bottom: 10px;
   }
 
-  .home_head {
-    padding: 20px 0 30px 10px;
-    margin: 0 0 50px 0;
-    border-top-right-radius: 10%;
-    border-bottom-left-radius: 10%;
+  .home_head-imgbox {
+    margin: 25px 0 50px 0;
   }
 
-  .home_head,
+  .home_img1 {
+    width: 200px;
+    height: 200px;
+  }
+
+  // ----- ARTICLE -----
+
+  .home_articles {
+    width: 90%;
+  }
+
+  .home_article-title {
+    padding: 20px 0 20px 0;
+    text-align: center;
+  }
+
   .home_article-p {
     padding: 15px;
   }
@@ -71,12 +112,11 @@ section {
     margin-bottom: 15px;
   }
 
-  .home-head {
+  .home_article-title {
     text-align: center;
   }
 
-  .home_article-h2,
-  .home_article-h3,
+  .home_article-h,
   .home_article-p {
     padding-bottom: 20px;
     transition: ease 0.3s;
@@ -91,6 +131,16 @@ section {
     border-bottom-left-radius: 20%;
   }
 
+  .home_article-img {
+    margin-left: 10px;
+    padding-bottom: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  // ----- end ARTICLE -----
+
+  // ----- BUTTON -----
   .home_btn-wrap {
     width: 100%;
     height: 300px;
@@ -106,15 +156,31 @@ section {
   .home-btn:hover {
     transform: scale(1.05);
   }
+
+  // ----- end BUTTON -----
 }
 
-/* ----- end SECTION ----- */
+/* ----- end SECTION INTRODUCTION----- */
 
 /* ----- ASIDE ----- */
 
-.home_aside {
+aside {
   height: 650px;
   width: 90%;
+
+  // ----- IMAGE -----
+  .img_box-lesson {
+    display: none;
+  }
+
+  .img_box-lesson img {
+    width: 200px;
+    height: 300px;
+  }
+
+  // ----- end IMAGE -----
+
+  // ----- TITLE -----
 
   .home_aside-title {
     width: 100%;
@@ -123,18 +189,27 @@ section {
     margin-top: 15px;
   }
 
+  .home_aside-h2 {
+    width: 80%;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 10px 0 10px 0;
+  }
+
+  // ----- end TITLE -----
+
+  // ----- BOX -----
+
   .home_aside-wrap {
-    width: 90%;
+    width: 100%;
     height: 100%;
   }
 
   .home_aside-ul {
-    width: 100%;
     height: 90%;
   }
 
   .home_aside-li {
-    width: 100%;
     height: 150px;
     margin: 7px 0 7px 0;
     box-shadow: 1px 1px 6px #0e0101;
@@ -144,37 +219,45 @@ section {
     transform: scale(1.05);
   }
 
-  .home_li-text {
-    width: 200px;
-    height: 235px;
-    margin-left: 5px;
-  }
-
-  .home_li-h2 {
-    margin: 10px 0 10px 10px;
-  }
-
-  .home_li-p {
-    margin: 0 10px 0 10px;
-  }
+  // ------ // ----- //
 
   .home_aside-box {
     height: 149px;
     width: 80px;
-    margin-right: 15px;
+    margin-left: 20px;
   }
 
   .home_li-indicator {
-    width: 80px;
+    width: 100%;
     height: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
   }
 
   .home_li-img {
-    width: 80px;
+    width: 100%;
     height: 100px;
   }
+
+  // ------ // ----- //
+
+  .home_li-text {
+    width: 80%;
+    margin: 10px 10px 10px 10px;
+  }
+
+  .home_li-h2 {
+    margin: 3px 0 5px 10px;
+    // font-weight: bold;
+  }
+
+  .home_li-p {
+    height: 110px;
+    margin: 0 10px 0 10px;
+    overflow: auto;
+  }
+
+  // ----- end BOX -----
 }
 
 /* ----- end ASIDE ----- */
@@ -183,18 +266,28 @@ section {
 
 .home_video-contain {
   width: 90%;
-  height: 550px;
+  padding-top: 550px;
   margin: 50px 0 25px 0;
   padding: 25px 0 25px 0;
   justify-content: space-between;
 
   .home_video-box {
-    height: 250px;
+    position: relative;
+    padding-top: 50%;
+    width: 90%;
+    overflow: hidden;
+    margin: 25px 0 25px 0;
   }
 
   .home_video {
-    height: 220px;
-    width: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 
   .line {
@@ -208,9 +301,8 @@ section {
 
 .home_section {
   width: 90%;
-  height: 300px;
-  margin: 50px 0 25px 0;
-  padding: 50px 0 10px 0;
+  margin: 50px 0 0px 0;
+  padding: 100px 0 10px 0;
   text-align: center;
   border-top: 2px solid;
 
@@ -219,22 +311,15 @@ section {
   }
 
   .home_logo-box {
+    width: 100%;
     margin: 20px 0 20px 0;
   }
 
   .home_partnerlogo {
     width: 50px;
     height: 50px;
-    margin: 0 10px 0 10px;
+    margin: 0 12px 0 12px;
   }
 }
 
 /* ----- end PARTNER ----- */
-
-@mixin media-min($_key) {
-  @media screen and(min-width: map-get($breakpoints, $_key)) {
-    & {
-      @content;
-    }
-  }
-}

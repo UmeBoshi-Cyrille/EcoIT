@@ -115,12 +115,15 @@ $colorWhite: #edf6f9;
 
 .hd-navbtn,
 .home-btn {
-  border-color: var(--bg-key1);
+  border: var(--bg-key2);
 }
 
-.home_aside,
 .home_li-img {
   border: 2px solid var(--bg-darkwhite);
+}
+
+.aside-wrapper {
+  border: 2px dashed var(--bg-key3);
 }
 
 .ft-footer {
