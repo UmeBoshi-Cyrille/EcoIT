@@ -76,8 +76,6 @@ main {
     }
 
     .home_article-title {
-      flex-direction: row-reverse;
-
       .home_article-img {
         width: 100px;
         height: 100px;
@@ -102,6 +100,10 @@ main {
       flex-direction: row;
     }
 
+    .home_section-wrap {
+      margin-left: 20px;
+    }
+
     article,
     .home_head-box {
       width: 500px;
@@ -119,7 +121,7 @@ main {
     }
 
     aside {
-      width: 450px;
+      width: 500px;
     }
 
     .img_box-lesson {
@@ -133,17 +135,12 @@ main {
     .home_aside-box {
       height: 150px;
       width: 100px;
-      margin-right: 10px;
+      // margin-right: 10px;
     }
 
     .home_li-indicator {
       width: 50px;
       height: 30px;
-    }
-
-    .home_li-img {
-      width: 100%;
-      height: 120px;
     }
 
     .home_video-contain {
@@ -178,7 +175,7 @@ main {
     }
 
     .home_section-wrap {
-      width: 70%;
+      width: 50%;
     }
 
     .home_head-box,

@@ -7,6 +7,7 @@ aside,
 .home_head-imgbox,
 .home_articles,
 .home_article-title,
+.home_article-wrap,
 .home_btn-wrap,
 .aside-wrapper,
 .home_aside-title,
@@ -29,7 +30,9 @@ aside,
 .home_section_wrap,
 .home_head-box,
 .home_head-imgbox,
+.home_articles,
 .home_article-title,
+.home_article-wrap,
 .home_btn-wrap,
 .aside-wrapper,
 .home_aside-title,
@@ -52,6 +55,7 @@ aside,
 .home_section-wrap,
 .home_head-box,
 .home_articles,
+.home_article-wrap,
 .home_btn-wrap,
 .aside-wrapper,
 .home_aside-ul,
@@ -68,7 +72,7 @@ main {
 }
 
 .home_main-wrapper {
-  width: 90%;
+  width: 100%;
 }
 
 /* ----- SECTION INTRODUCTION----- */
@@ -94,13 +98,31 @@ main {
 
   // ----- ARTICLE -----
 
+  article {
+    width: 100%;
+  }
+
   .home_articles {
-    width: 90%;
+    width: 100%;
+  }
+
+  .articles_bis {
+    padding-bottom: 40px;
   }
 
   .home_article-title {
     padding: 20px 0 20px 0;
+    flex-direction: row-reverse;
     text-align: center;
+  }
+
+  .article_titlebis {
+    padding-top: 30px;
+  }
+
+  .home_article-wrap {
+    width: 90%;
+    padding-bottom: 20px;
   }
 
   .home_article-p {
@@ -110,10 +132,6 @@ main {
   .home-p1,
   .home-p3 {
     margin-bottom: 15px;
-  }
-
-  .home_article-title {
-    text-align: center;
   }
 
   .home_article-h,
@@ -167,6 +185,7 @@ main {
 aside {
   height: 650px;
   width: 90%;
+  margin: 0 20px 0 20px;
 
   // ----- IMAGE -----
   .img_box-lesson {
