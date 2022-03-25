@@ -209,7 +209,7 @@ main {
   @include media-min("desktop-large") {
     .home_video-contain {
       flex-direction: row;
-      width: 70%;
+      width: 1190px;
       height: 400px;
 
       .home_video-box {
