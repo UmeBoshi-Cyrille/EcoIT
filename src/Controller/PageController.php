@@ -15,4 +15,12 @@ class PageController extends AbstractController
             'EcoIT' => 'EcoIt',
         ]);
     }
+
+    #[Route('/login', name: 'login')]
+    public function login(): Response
+    {
+        return $this->render('login/login.html.twig', [
+            'login' => 'Login',
+        ]);
+    }
 }

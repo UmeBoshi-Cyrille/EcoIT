@@ -15,6 +15,8 @@ $colorDark1: #38a3a5;
 $colorDark2: #22577a;
 $colorDark: #0e0101;
 $colorWhite: #edf6f9;
+$colorRed: #af3838;
+$colorGreen: #448d1a;
 
 .theme-light {
   --bg-key1: #c7f9cc;
@@ -23,6 +25,7 @@ $colorWhite: #edf6f9;
   --bg-key4: #38a3a5;
   --bg-key5: #22577a;
   --bg-key6: #daaf8b;
+  --bg-key7: #af3838;
   --bg-whitedark: #edf6f9;
   --bg-darkwhite: #222324;
   --font-darkwhite: #00070a;
@@ -36,6 +39,7 @@ $colorWhite: #edf6f9;
   --bg-key4: #143246;
   --bg-key5: #2e5169;
   --bg-key6: #8f6441;
+  --bg-key7: #af3838;
   --bg-whitedark: #222324;
   --bg-darkwhite: #edf6f9;
   --font-darkwhite: #edf6f9;
@@ -49,6 +53,7 @@ $colorWhite: #edf6f9;
   --bg-keyD: #143246;
   --bg-keyE: #2e5169;
   --bg-keyF: #8f6441;
+  --bg-keyG: #884d4d;
 }
 
 /* ----- end COLOR VARIABLES ----- */
@@ -83,19 +88,30 @@ $colorWhite: #edf6f9;
 .key_bgA {
   background-color: var(--bg-keyA);
 }
-.key_bgB {
-  background-color: var(--bg-keyB);
+.key_bgblack {
+  background-color: $colorDark;
 }
 .key_bgC {
   background-color: var(--bg-keyC);
 }
-.key_bgD {
-  background-color: var(--bg-keyD);
+.key_bggreen {
+  background-color: $colorGreen;
+}
+.key_bgred {
+  background-color: $colorRed;
 }
 
 /* ----- end COLOR BG CLASS ----- */
 
 /* ----- COLOR FONT CLASS ----- */
+
+.key_ftw {
+  color: $colorWhite;
+}
+
+.key_ftd {
+  color: $colorDark;
+}
 
 .key_ftwd {
   color: var(--font-whitedark);
