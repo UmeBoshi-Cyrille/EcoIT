@@ -1,5 +1,4 @@
 $breakpoints: (
-  "small-phone": 300px,
   "phone": 500px,
   "tablet": 700px,
   "tablet-large": 900px,
@@ -27,6 +26,10 @@ section,
   align-items: center;
 }
 
+.cancel_contain {
+  justify-content: center;
+}
+
 form,
 .login_wrapper,
 .login_container,
@@ -44,20 +47,17 @@ section {
   }
 
   .login_title-box,
-  .login_container {
-    width: 100%;
-  }
-
+  .login_container,
   .login_img-box {
     width: 100%;
   }
 
   .login_img-box img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
 
-  h2 {
+  .login_h2 {
     padding: 30px 0 30px 0;
     font-size: 25px;
   }
@@ -68,7 +68,8 @@ section {
   }
 
   form,
-  button,
+  .button_login,
+  .button_cancel,
   .cancel_contain {
     margin-left: auto;
     margin-right: auto;
@@ -91,18 +92,21 @@ section {
     border: none;
     display: inline-block;
     box-sizing: border-box;
+    z-index: 0;
   }
 
-  button {
+  .button_login,
+  .button_cancel {
     margin-top: 30px;
     margin-bottom: 40px;
     padding: 15px 0 15px 0;
     border: none;
-    border-radius: 10px;
+    border-radius: 50px;
   }
 
-  button:hover {
-    opacity: 0.8;
+  .button_login:hover,
+  .button_cancel:hover {
+    opacity: 0.5;
   }
 
   .button_login {
@@ -121,13 +125,17 @@ section {
 
   .button_cancel {
     width: 100px;
-    margin-top: 35px;
     margin-left: 20px;
   }
 
-  span {
+  .span_password {
     float: right;
+    width: 170px;
     margin-right: 20px;
+  }
+
+  .span_password:hover {
+    text-decoration: underline;
   }
 }
 
@@ -140,7 +148,7 @@ section {
 }
 
 section {
-  @include media-max("small-phone") {
+  @include media-max("phone") {
     .cancel_contain {
       flex-direction: column;
       justify-content: center;
@@ -152,8 +160,10 @@ section {
       width: 70%;
     }
 
-    span {
+    .span_password {
       margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }
@@ -168,7 +178,7 @@ section {
 
 section {
   @include media-min("phone") {
-    h2 {
+    .login_h2 {
       font-size: 45px;
     }
   }
@@ -176,14 +186,21 @@ section {
 
 section {
   @include media-min("tablet") {
-    h2 {
+    .login_h2 {
       font-size: 50px;
+    }
+
+    .login_img-box img {
+      width: 150px;
+      height: 150px;
     }
   }
 }
 
 section {
   @include media-min("tablet-large") {
+    padding-top: 100px;
+
     .login_wrapper {
       max-width: 750px;
     }

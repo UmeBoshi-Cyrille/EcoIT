@@ -16,11 +16,19 @@ class PageController extends AbstractController
         ]);
     }
 
-    #[Route('/login', name: 'login')]
+    #[Route('/home/login', name: 'login')]
     public function login(): Response
     {
         return $this->render('login/login.html.twig', [
             'login' => 'Login',
+        ]);
+    }
+
+    #[Route('/home/subscribe', name: 'subscribe')]
+    public function subscribe(): Response
+    {
+        return $this->render('login/subscribe.html.twig', [
+            'subscribe' => 'Subscribe',
         ]);
     }
 }

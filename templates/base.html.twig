@@ -6,13 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/scss/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/scss/switch.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/scss/color.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/scss/txt.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/scss/config.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/scss/image.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/scss/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/scss/config.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/scss/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/scss/switch.css') }}">
+    <style type="text/css">
+        @font-face {
+        font-family: Oxygen;
+        src: url({{asset('storage/fonts/Oxygen/Oxygen-Bold.ttf')}});
+        }
+
+        @font-face {
+        font-family: Antic-Slab;
+        src: url({{asset('storage/fonts/Antic_Slab/AnticSlab-Regular.ttf')}});
+        }
+
+        @font-face {
+        font-family: Raleway;
+        src: url({{asset('storage/fonts/Raleway/Raleway-Regular.ttf')}})
+        }
+    </style>
     {% block styleSheets %}{% endblock %}
 </head>
 <body class="light theme-light key_bgwd key_ftdw">
@@ -24,7 +40,7 @@
                 <h2 class="font-f1 key_ftdw">Les solutions web-écologique</h2>
             </div>
             <div class="hd_logobox key_bg3">
-               <a href=""><img class="hd_logo" src="{{ asset('assets/storage/logo/ecoIt2.png') }}" alt="logo-ecoIt"></a> 
+               <a href="{{path('home')}}"><img class="hd_logo" src="{{ asset('assets/storage/logo/ecoIt2.png') }}" alt="logo-ecoIt"></a> 
             </div>
         </div>
         {% include "_modules/_switch.html.twig" %}

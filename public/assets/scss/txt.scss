@@ -45,20 +45,20 @@ $fontSize_xs: 0.5em;
 
 //----- FONT VARIABLES -----
 
-@font-face {
-  font-family: Oxygen;
-  src: url("../fonts/Oxygen/Oxygen-Bold.ttf");
-}
+// @font-face {
+//   font-family: Oxygen;
+//   src: url("fonts/Oxygen/Oxygen-Bold.ttf");
+// }
 
-@font-face {
-  font-family: Antic-Slab;
-  src: url("../fonts/Antic_Slab/AnticSlab-Regular.ttf");
-}
+// @font-face {
+//   font-family: Antic-Slab;
+//   src: url("fonts/Antic_Slab/AnticSlab-Regular.ttf");
+// }
 
-@font-face {
-  font-family: Raleway;
-  src: url("../fonts/Raleway/static/Raleway-Regular.ttf");
-}
+// @font-face {
+//   font-family: Raleway;
+//   src: url("fonts/Raleway/Raleway-Regular.ttf");
+// }
 
 $fontTitle: "Oxygen", sans-serif;
 $fontSubtitle: "Antic-Slab", sans-serif;
@@ -88,12 +88,9 @@ $fontText: "Raleway", sans-serif;
   font-size: $fontSize_xl;
 }
 
-.home_partner-title {
+.home_partner-title,
+.subscribe_h2 {
   font-size: $fontSize_md;
-}
-
-.home_article-h {
-  font-size: $fontSize_sm1;
 }
 
 .hd-li a,
@@ -103,6 +100,7 @@ $fontText: "Raleway", sans-serif;
   font-size: $fontSize_sm2;
 }
 
+.home_article-h,
 .home_li-h2,
 .ft-listtext a,
 .ft-p {
@@ -110,6 +108,8 @@ $fontText: "Raleway", sans-serif;
 }
 
 .home_partner-h3,
+.button_subscribe,
+.button_cancel,
 .ft-p2 {
   font-size: $fontSize_xs2;
 }
