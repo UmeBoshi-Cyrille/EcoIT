@@ -13,7 +13,7 @@ form,
 .login_container,
 .login_img-box,
 .form_box,
-.cancel_contain {
+.cancel_box {
   display: flex;
 }
 
@@ -26,9 +26,9 @@ section,
   align-items: center;
 }
 
-.cancel_contain {
-  justify-content: center;
-}
+// .cancel_box {
+//   justify-content: center;
+// }
 
 form,
 .login_wrapper,
@@ -70,7 +70,7 @@ section {
   form,
   .button_login,
   .button_cancel,
-  .cancel_contain {
+  .cancel_box {
     margin-left: auto;
     margin-right: auto;
   }
@@ -117,21 +117,10 @@ section {
     margin-bottom: 10px;
   }
 
-  .cancel_contain {
+  .cancel_box {
     width: 100%;
     align-items: center;
     justify-content: space-between;
-  }
-
-  .button_cancel {
-    width: 100px;
-    margin-left: 20px;
-  }
-
-  .span_password {
-    float: right;
-    width: 170px;
-    margin-right: 20px;
   }
 
   .span_password:hover {
@@ -149,7 +138,7 @@ section {
 
 section {
   @include media-max("phone") {
-    .cancel_contain {
+    .cancel_box {
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -180,6 +169,17 @@ section {
   @include media-min("phone") {
     .login_h2 {
       font-size: 45px;
+    }
+
+    .button_cancel {
+      width: 100px;
+      margin-left: 30px;
+    }
+
+    .span_password {
+      float: right;
+      width: 170px;
+      margin-right: 20px;
     }
   }
 }

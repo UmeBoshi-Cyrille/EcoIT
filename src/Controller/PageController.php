@@ -31,4 +31,12 @@ class PageController extends AbstractController
             'subscribe' => 'Subscribe',
         ]);
     }
+
+    #[Route('/home/apply', name: 'apply')]
+    public function apply(): Response
+    {
+        return $this->render('login/apply.html.twig', [
+            'apply' => 'Apply',
+        ]);
+    }
 }
