@@ -39,4 +39,12 @@ class PageController extends AbstractController
             'apply' => 'Apply',
         ]);
     }
+
+    #[Route('/home/contact', name: 'contact')]
+    public function contact(): Response
+    {
+        return $this->render('base/contact.html.twig', [
+            'contact' => 'Contact',
+        ]);
+    }
 }

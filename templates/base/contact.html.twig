@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Login{% endblock %}
+{% block title %}contact{% endblock %}
 {% block styleSheets %}
-    <link rel="stylesheet" href="{{ asset('assets/pages/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/pages/contact.css') }}">
 {% endblock %}
 
 {% block navlist %}
@@ -27,40 +27,36 @@
 {% block main %}
 
     <section>
-        <div class="login_wrapper">
-            <div class="login_title-box key_bg2">
-                <h2 class="login_h2 key_ftdw font-f1">Connexion</h2>
+        <div class="contact_wrapper">
+            <div class="contact_title">
+                <h2 class="contact_h2 key_ftdw font-f1">Nous Contacter</h2>
             </div>
-            <div class="login_container key_bg1">
-                <div class="login_img-box">
-                    <img class="login_img" src="{{ asset('assets/storage/image/astronaut-profile.png') }}" alt="astronaut">
+            <div class="contact_container ">
+                <div class="img-box">
+                    <img class ="contact_img" src="{{ asset('assets/storage/image/ecoconnect.png') }}" alt="astronaut outer-space">
                 </div>
-                {# {% if error %}
-                <div>{{ error.messageKey | trans(error.messageData, 'security') }}</div>
-                {% endif %} #}
-                <div class="form_box key_bg3">
+                <div class="form_box key_bg1">
                     <form action="" method="post">
+                        <label class ="key_ftdw font-f2" for="name"><strong>Nom</strong></label>
+                        <input type="text" id="name" name="_surname" placeholder="Nom"/>
+                        <label class ="key_ftdw font-f2" for="name"><strong>Prénom</strong></label>
+                        <input type="text" id="name" name="_surname" placeholder="Prénom"/>
                         <label class ="key_ftdw font-f2" for="username"><strong>Email</strong></label>
                         <input type="text" id="username" name="_username" placeholder="Enter Email"/>
-                        <label class ="key_ftdw font-f2" for="password"><strong>Password</strong></label>
-                        <input type="password"  id="password" name="_password" placeholder="Enter Password"/>
+                        <label class ="key_ftdw font-f2" for="description"><strong>Message</strong></label>
+                        <textarea id="description" name="_description" placeholder="Enter your message" rows="6" cols="50"/></textarea>
                         {# Control Url user is redirected to on success 
                         <input type="hidden" name="_target_path" value="/account"/> #}
-                        <button class="button_login key_ftw font-f3 key_bggreen" type="submit">Login</button>
-                        <label class="key_ftdw font-f2">
-                            <input class="checkbox" type="checkbox" checked="checked" name="remember"> Remember me
-                        </label>
+                        <button class="button_contact key_ftw font-f3 key_bggreen" type="submit">Envoyer</button>
                     </form>
-                    <div class="cancel_box key_bg1">
+                    <div class="cancel_box ">
                         <form action="{{path('home')}}">
                             <button class="button_cancel key_ftw font-f3 key_bgred" type="submit">Cancel</button>
                         </form>
-                        <span class="span_password key_ftdw font-f3">Forgot <a class="key_ftd" href="#">password ?</a></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    
 {% endblock %}
