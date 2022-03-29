@@ -8,7 +8,7 @@
 {% block navlist %}
     <li class="hd-li1"></li>
     <li class="hd-li right font-f1">
-        <a class="key_ftdw" href="">Formations</a>
+        <a class="key_ftdw" href="{{path('formation')}}">Formations</a>
     </li>
     <li class="hd-li left font-f1">
         <a class="key_ftdw" href="{{path('apply')}}">Postuler</a>             
@@ -33,7 +33,10 @@
             </div>
             <div class="login_container key_bg1">
                 <div class="login_img-box">
-                    <img class="login_img" src="{{ asset('assets/storage/image/astronaut-profile.png') }}" alt="astronaut">
+                    <img class="login_img" 
+                         src="{{ asset('assets/storage/image/astronaut-profile.png') }}" 
+                         alt="astronaut"
+                         title="https://www.freepng.fr">
                 </div>
                 {# {% if error %}
                 <div>{{ error.messageKey | trans(error.messageData, 'security') }}</div>

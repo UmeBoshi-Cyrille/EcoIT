@@ -1,0 +1,190 @@
+$breakpoints: (
+  "phone": 500px,
+  "tablet": 700px,
+  "tablet-large": 900px,
+  "desktop": 1024px,
+  "desktop-large": 1200px,
+);
+
+.section_head,
+.formation_headwrapper,
+.formation_pagetitle,
+.searchbar,
+.button_search,
+.section_main,
+.formation_globalwrapper,
+.formation_container,
+.formation_title,
+.instructor_imgbox,
+.preview_button,
+.preview_box {
+  display: flex;
+}
+
+.section_head,
+.formation_headwrapper,
+.section_main,
+.formation_globalwrapper,
+.formation_title {
+  flex-direction: column;
+}
+
+.formation_container {
+  flex-direction: row-reverse;
+}
+
+.section_head,
+.formation_headwrapper,
+.formation_pagetitle,
+.searchbar,
+.button_search,
+.section_main,
+.formation_globalwrapper,
+.formation_container,
+.instructor_imgbox,
+.preview_button,
+.preview_box {
+  align-items: center;
+}
+
+.formation_pagetitle,
+.searchbar,
+.button_search,
+.instructor_imgbox,
+.preview_button,
+.preview_box {
+  justify-content: center;
+}
+
+.preview_box {
+  align-items: flex-start;
+}
+
+.section_head,
+.section_main,
+.formation_pagetitle,
+.searchbar,
+.section_main,
+.formation_container {
+  width: 100%;
+}
+
+.formation_headwrapper,
+.formation_globalwrapper {
+  width: 90%;
+}
+
+/* ----- SECTION HEAD ----- */
+
+.section_head {
+  height: 200px;
+  padding-top: 70px;
+  margin-bottom: 20px;
+
+  .formation_headwrapper {
+    margin-top: 50px;
+  }
+
+  .searchbar {
+    margin-top: 30px;
+  }
+
+  .input_searchtext {
+    width: 70%;
+    padding: 7px 10px 7px 10px;
+    border-radius: 50px;
+  }
+
+  .button_search {
+    height: 40px;
+    width: 40px;
+    margin-left: 5px;
+    border-radius: 50%;
+  }
+
+  .search_icon {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+/* ----- end SECTION HEAD ----- */
+
+/* ----- SECTION MAIN ----- */
+
+.section_main {
+  margin-bottom: 50px;
+
+  .formation_globalwrapper {
+    transition: 0.3s ease;
+  }
+
+  .formation_globalwrapper:hover {
+    transform: scale(1.02);
+  }
+
+  .formation_container {
+    position: relative;
+    height: 150px;
+    box-shadow: 1px 1px 6px #000;
+    cursor: pointer;
+  }
+
+  .formation_title {
+    height: 100%;
+    width: 100%;
+  }
+
+  .formation_h3 {
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .instructor_imgbox {
+    height: 100%;
+    width: 100px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+  }
+
+  .instructor_img {
+    width: 70px;
+    height: 90px;
+    margin-left: 20px;
+    border: 1px solid;
+  }
+
+  .preview_button {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    width: 80px;
+    height: 25px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 6px #000;
+    // cursor: pointer;
+    border: none;
+  }
+
+  .preview_box {
+    display: none;
+    width: 95%;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 1px 1px 6px #000;
+  }
+
+  .preview_p {
+    padding: 20px;
+  }
+
+  .showPreview {
+    display: block;
+  }
+}
+
+/* ----- end SECTION MAIN ----- */

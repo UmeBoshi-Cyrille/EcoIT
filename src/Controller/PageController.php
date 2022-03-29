@@ -47,4 +47,12 @@ class PageController extends AbstractController
             'contact' => 'Contact',
         ]);
     }
+
+    #[Route('/home/formation', name: 'formation')]
+    public function formation(): Response
+    {
+        return $this->render('base/formations.html.twig', [
+            'formation' => 'Formation',
+        ]);
+    }
 }

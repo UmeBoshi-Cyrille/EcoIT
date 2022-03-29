@@ -8,7 +8,7 @@
 {% block navlist %}
     <li class="hd-li1"></li>
     <li class="hd-li right font-f1">
-        <a class="key_ftdw" href="">Formations</a>
+        <a class="key_ftdw" href="{{path('formation')}}">Formations</a>
     </li>
     <li class="hd-li left font-f1">
         <a class="key_ftdw" href="{{path('apply')}}">Postuler</a>             
@@ -33,7 +33,10 @@
             </div>
             <div class="contact_container ">
                 <div class="img-box">
-                    <img class ="contact_img" src="{{ asset('assets/storage/image/ecoconnect.png') }}" alt="astronaut outer-space">
+                    <img class ="contact_img" 
+                         src="{{ asset('assets/storage/image/ecoconnect.png') }}" 
+                         alt="astronaut outer-space"
+                         title="https://www.freepng.fr">
                 </div>
                 <div class="form_box key_bg1">
                     <form action="" method="post">
