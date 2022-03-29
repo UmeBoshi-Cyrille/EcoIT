@@ -55,4 +55,12 @@ class PageController extends AbstractController
             'formation' => 'Formation',
         ]);
     }
+
+    #[Route('/home/student/formation', name: 'student_formation')]
+    public function studentFormation(): Response
+    {
+        return $this->render('student/formations_student.html.twig', [
+            'formation' => 'Formation',
+        ]);
+    }
 }
