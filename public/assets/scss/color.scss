@@ -211,14 +211,4 @@ body {
   }
 }
 
-body {
-  @include media-min("desktop") {
-  }
-}
-
-body {
-  @include media-min("desktop-large") {
-  }
-}
-
 /* ----- end COLOR STATES ----- */

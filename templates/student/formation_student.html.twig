@@ -1,34 +1,65 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Formation{% endblock %}
+{% block title %}Formations{% endblock %}
 {% block styleSheets %}
-    <link rel="stylesheet" href="{{ asset('assets/pages/formations_student.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/pages/formation_student.css') }}">
 {% endblock %}
 
-{% block navlist %}
-    <li class="hd-li1"></li>
-    <li class="hd-li right font-f1">
-        <a class="key_ftdw" href="{{path('formation')}}">Formations</a>
-    </li>
-    <li class="hd-li left font-f1">
-        <a class="key_ftdw" href="{{path('apply')}}">Postuler</a>             
-    </li>
-    <li class="hd-li right font-f1">
-        <a class="key_ftdw" href="{{path('contact')}}">Contact</a>   
-    </li>
-    <li class="hd-li hd_home-li left font-f1 key_bg3">
-        <a class="nav_a key_ftdw" href="{{path('subscribe')}}">S'incrire</a>           
-    </li><hr>
-    <li class="hd-li hd_home-li right font-f1 key_bg3">
-        <a class="nav_a key_ftdw" href="{{path('home')}}">Déconnexion</a>              
-    </li>
+{% block header %}
+    {% include "base/_header_student.html.twig" %}
 {% endblock %}
 
 {% block main %}
+    <section class="formation_section">
+        <div class="formation_headsection">
+            <h2 class="formation_title key_ftdw font-f1">Titre de la formation</h2>
+            <img class="formation_sectionImg" 
+                 src="{{ asset('assets/storage/image/astro-outer-space.png') }}" 
+                 alt="space"
+                 title="https://www.freepng.fr">
+        </div>
+        <div class="formation_mainWrapper">
+            <div class="lesson_displayside">
+                <div class="lesson_headbox key_bg1">
+                    <div class="section_titlebox">
+                        <h3 class="section_title key_ftdw font-f1">Titre de la section</h3>
+                    </div>
+                    <div class="span_authorbox">
+                        <span class="span_author key_ftdw">Auteur: quelqu'un d'autre</span>
+                    </div>
+                </div>
+                <article class="lesson_article key_bg2">
+                    <h2 class="lesson_title key_ftdw font-f1">Titre de la leçon</h2>
+                </article>
+            </div>
+            <div class="sections_side">
+                <div class="sections_wrapper">
+                    <div class="formations_sections">
+                        <button class="section_button key_bg2" onclick="dropdownLessons()">
+                            <h3 class="section_h3 key_ftdw font-f1">Titre de le section</h3>
+                            <img class="section_buttonImg key_bg1"  
+                                src="{{ asset('assets/storage/icons/gearPlanet.png') }}" 
+                                alt="rouages planète"
+                                title="icon by : https://icons8.com/icon/Qw0j4GWR9BWJ/gear">
+                        </button>
+                        <div class="formation_lesson" id="lessons_dropdown">
+                            <button class="lesson_button key_bg1">
+                                <h3 class="lesson_h3 key_ftdw font-f3">Titre de la leçon</h3>
+                                <img class="lesson_buttonImg"  
+                                    src="{{ asset('assets/storage/icons/leaf.png') }}" 
+                                    alt="feuille"
+                                    title="icon by : https://icons8.com/icon/cyXR0oE7Vvwh/leaf">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
    
 {% endblock %}
 
 {% block javascripts %}
-    
+    <script src="{{ asset('assets/js/formationStudent.js') }}"></script>
 {% endblock %}

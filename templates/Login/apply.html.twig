@@ -5,23 +5,8 @@
     <link rel="stylesheet" href="{{ asset('assets/pages/apply.css') }}">
 {% endblock %}
 
-{% block navlist %}
-    <li class="hd-li1"></li>
-    <li class="hd-li right font-f1">
-        <a class="key_ftdw" href="{{path('formation')}}">Formations</a>
-    </li>
-    <li class="hd-li left font-f1">
-        <a class="key_ftdw" href="{{path('apply')}}">Postuler</a>             
-    </li>
-    <li class="hd-li right font-f1">
-        <a class="key_ftdw" href="{{path('contact')}}">Contact</a>   
-    </li>
-    <li class="hd-li hd_home-li left font-f1 key_bg3">
-        <a class="nav_a key_ftdw" href="{{path('subscribe')}}">S'incrire</a>           
-    </li><hr>
-    <li class="hd-li hd_home-li right font-f1 key_bg3">
-        <a class="nav_a key_ftdw" href="{{path('login')}}">Connexion</a>              
-    </li>
+{% block header %}
+    {% include "base/_header.html.twig" %}
 {% endblock %}
 
 {% block main %}

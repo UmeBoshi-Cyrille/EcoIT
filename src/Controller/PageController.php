@@ -48,18 +48,34 @@ class PageController extends AbstractController
         ]);
     }
 
-    #[Route('/home/formation', name: 'formation')]
+    #[Route('/home/formations', name: 'formations')]
     public function formation(): Response
     {
         return $this->render('base/formations.html.twig', [
-            'formation' => 'Formation',
+            'formations' => 'Formations',
         ]);
     }
 
-    #[Route('/home/student/formation', name: 'student_formation')]
-    public function studentFormation(): Response
+    #[Route('/student/home', name: 'student_home')]
+    public function studentHome(): Response
+    {
+        return $this->render('student/home_student.html.twig', [
+            'home' => 'Home',
+        ]);
+    }
+
+    #[Route('/student/formations', name: 'student_formations')]
+    public function studentFormations(): Response
     {
         return $this->render('student/formations_student.html.twig', [
+            'formations' => 'Formations',
+        ]);
+    }
+
+    #[Route('/student/formation', name: 'student_formation')]
+    public function studentFormation(): Response
+    {
+        return $this->render('student/formation_student.html.twig', [
             'formation' => 'Formation',
         ]);
     }

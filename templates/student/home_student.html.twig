@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block header %}
-    {% include "base/_header.html.twig" %}
+    {% include "base/_header_student.html.twig" %}
 {% endblock %}
 
 {% block main %}
@@ -68,19 +68,6 @@
                     </div>
                 </div>
             </article>
-
-            <div class="home_btn-wrap">
-                <div class="home-btnbox">
-                    <form action="{{path('subscribe')}}">
-                        <button class="home-btn key_bg3 key_ftdw" type="submit">S'incrire</button>
-                    </form>
-                </div>
-                <div class="home-btnbox">
-                    <form action="{{path('login')}}">
-                        <button class="home-btn key_bg3 key_ftdw">Se connecter</button>
-                    </form>
-                </div>
-            </div>
         </div>
         
         <aside>
