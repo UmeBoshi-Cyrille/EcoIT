@@ -8,6 +8,8 @@ $breakpoints: (
 
 .formation_section,
 .formation_headsection,
+.formation_headOne,
+.formation_headTwo,
 .formation_mainWrapper,
 .lesson_displayside,
 .sections_side,
@@ -22,7 +24,7 @@ $breakpoints: (
   display: flex;
 }
 
-.formation_headsection {
+.formation_headOne {
   flex-direction: column-reverse;
 }
 
@@ -37,6 +39,8 @@ $breakpoints: (
 
 .formation_mainWrapper,
 .formation_headsection,
+.formation_headOne,
+.formation_headTwo,
 .lesson_displayside,
 .sections_side,
 .formation_section,
@@ -48,6 +52,9 @@ $breakpoints: (
   align-items: center;
 }
 
+.formation_headsection,
+.formation_headOne,
+.formation_headTwo,
 .lesson_headbox,
 .lesson_videoBox {
   justify-content: center;
@@ -73,12 +80,22 @@ $breakpoints: (
   margin-bottom: 50px;
 
   .formation_headsection {
+    width: 100%;
     margin-top: 50px;
+  }
+
+  .formation_headOne,
+  .formation_headTwo {
+    height: 100%;
+  }
+
+  .formation_headOne {
+    width: 100%;
   }
 
   .formation_title {
     margin-top: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     padding: 20px;
   }
 }
@@ -208,7 +225,7 @@ $breakpoints: (
     }
 
     .formation_title {
-      font-size: 30px;
+      font-size: 27px;
     }
   }
 }
@@ -226,6 +243,18 @@ $breakpoints: (
     .lesson_title,
     .lesson_h3 {
       font-size: 18px;
+    }
+  }
+}
+
+.formation_headsection {
+  @include media-max(("desktop")) {
+    .formation_headOne {
+      width: 100%;
+    }
+
+    .formation_headTwo {
+      display: none;
     }
   }
 }
@@ -251,6 +280,8 @@ $breakpoints: (
 
 .formation_headsection {
   @include media-min("phone") {
+    margin-bottom: 30px;
+
     .formation_sectionImg {
       width: 250px;
       height: 200px;
@@ -311,14 +342,32 @@ $breakpoints: (
 
 .formation_section {
   @include media-min("desktop") {
-    position: relative;
-
     .formation_headsection {
+      margin-bottom: 50px;
+      height: 300px;
+    }
+
+    .formation_headOne {
       flex-direction: row;
       justify-content: center;
-      width: 70%;
+      width: 72%;
       margin-right: auto;
-      margin-left: 25px;
+      background-color: black;
+    }
+
+    .formation_title {
+      margin-right: 20px;
+      color: #edf6f9;
+    }
+
+    .formation_headTwo {
+      // background-color: #04121b;
+      width: 28%;
+    }
+
+    .formation_sectionImgTwo {
+      width: 250px;
+      height: 350px;
     }
   }
 }

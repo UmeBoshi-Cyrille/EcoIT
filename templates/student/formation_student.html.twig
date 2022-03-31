@@ -10,13 +10,21 @@
 {% endblock %}
 
 {% block main %}
-    <section class="formation_section key_ftdw">
+    <section class="formation_section">
         <div class="formation_headsection">
-            <h2 class="formation_title font-f1">Titre de la formation</h2>
-            <img class="formation_sectionImg" 
-                 src="{{ asset('assets/storage/image/astro-outer-space.png') }}" 
-                 alt="space"
-                 title="https://www.freepng.fr">
+            <div class="formation_headOne">
+                <h2 class="formation_title key_ftdw font-f1">Titre de la formation</h2>
+                <img class="formation_sectionImg" 
+                    src="{{ asset('assets/storage/image/astro-outer-space.png') }}" 
+                    alt="space"
+                    title="https://www.freepng.fr">
+            </div>
+            <div class="formation_headTwo">
+                <img class="formation_sectionImgTwo" 
+                    src="{{ asset('assets/storage/image/astronaut-moonwalk.png') }}" 
+                    alt="space"
+                    title="https://www.freepng.fr">
+            </div>
         </div>
         <div class="formation_mainWrapper">
             <div class="lesson_displayside">
