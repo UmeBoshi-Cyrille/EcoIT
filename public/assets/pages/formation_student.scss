@@ -21,8 +21,7 @@ $breakpoints: (
   display: flex;
 }
 
-.formation_headsection,
-.formation_mainWrapper {
+.formation_headsection {
   flex-direction: column-reverse;
 }
 
@@ -35,6 +34,7 @@ $breakpoints: (
   flex-direction: column;
 }
 
+.formation_mainWrapper,
 .formation_headsection,
 .lesson_displayside,
 .sections_side,
@@ -77,18 +77,12 @@ $breakpoints: (
     margin-top: 10px;
     margin-bottom: 25px;
     padding: 20px;
-    font-size: 35px;
-  }
-
-  .formation_sectionImg {
-    width: 300px;
-    height: 250px;
   }
 }
 
 .formation_headsection,
 .formation_mainWrapper {
-  width: 95%;
+  width: 100%;
 }
 
 /* ----- LESSON SIDE ----- */
@@ -115,7 +109,6 @@ $breakpoints: (
 
   .lesson_title {
     padding: 20px;
-    font-size: 25px;
     text-decoration: underline;
   }
 }
@@ -157,10 +150,6 @@ $breakpoints: (
     border-radius: 50%;
   }
 
-  .section_h3 {
-    font-size: 25px;
-  }
-
   .formation_lesson {
     display: none;
     width: 99%;
@@ -177,7 +166,6 @@ $breakpoints: (
 
   .lesson_h3 {
     margin-left: 20px;
-    font-size: 20px;
   }
 
   .showLessons {
@@ -195,3 +183,127 @@ $breakpoints: (
 }
 
 /* ----- end SECTIONS SIDE ----- */
+
+@mixin media-max($_key) {
+  @media screen and(max-width: map-get($breakpoints, $_key)) {
+    & {
+      @content;
+    }
+  }
+}
+
+.formation_headsection {
+  @include media-max("phone") {
+    .formation_sectionImg {
+      width: 200px;
+      height: 150px;
+    }
+
+    .formation_title {
+      font-size: 30px;
+    }
+  }
+}
+
+.formation_mainWrapper {
+  @include media-max("phone") {
+    .section_title {
+      font-size: 25px;
+    }
+
+    .section_h3 {
+      font-size: 20px;
+    }
+
+    .lesson_title,
+    .lesson_h3 {
+      font-size: 18px;
+    }
+  }
+}
+
+.formation_mainWrapper {
+  @include media-max(("desktop")) {
+    flex-direction: column-reverse;
+
+    .lesson_displayside,
+    .sections_side {
+      width: 95%;
+    }
+  }
+}
+
+@mixin media-min($_key) {
+  @media screen and(min-width: map-get($breakpoints, $_key)) {
+    & {
+      @content;
+    }
+  }
+}
+
+.formation_headsection {
+  @include media-min("phone") {
+    .formation_sectionImg {
+      width: 250px;
+      height: 200px;
+    }
+
+    .formation_title {
+      font-size: 35px;
+    }
+  }
+}
+
+.formation_mainWrapper {
+  @include media-min("phone") {
+    .section_title {
+      font-size: 35px;
+    }
+
+    .section_h3 {
+      font-size: 25px;
+    }
+
+    .lesson_title {
+      font-size: 25px;
+    }
+
+    .lesson_h3 {
+      font-size: 17px;
+    }
+  }
+}
+
+.formation_section {
+  @include media-min("tablet") {
+    margin-top: 50px;
+
+    .formation_sectionImg {
+      width: 300px;
+      height: 250px;
+    }
+  }
+}
+
+.formation_section {
+  @include media-min("tablet-large") {
+    margin-top: 150px;
+  }
+}
+
+.formation_mainWrapper {
+  @include media-min(("desktop")) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+
+    .sections_side {
+      width: 25%;
+      margin-left: 10px;
+    }
+
+    .lesson_displayside {
+      width: 70%;
+    }
+  }
+}
