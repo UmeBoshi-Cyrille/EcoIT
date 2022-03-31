@@ -15,6 +15,7 @@ $breakpoints: (
 .section_titlebox,
 .span_authorbox,
 .lesson_article,
+.lesson_videoBox,
 .sections_wrapper,
 .section_button,
 .lesson_button {
@@ -40,13 +41,15 @@ $breakpoints: (
 .sections_side,
 .formation_section,
 .lesson_headbox,
+.lesson_videoBox,
 .sections_wrapper,
 .section_button,
 .lesson_button {
   align-items: center;
 }
 
-.lesson_headbox {
+.lesson_headbox,
+.lesson_videoBox {
   justify-content: center;
 }
 
@@ -81,7 +84,8 @@ $breakpoints: (
 }
 
 .formation_headsection,
-.formation_mainWrapper {
+.formation_mainWrapper,
+.lesson_videoBox {
   width: 100%;
 }
 
@@ -108,6 +112,8 @@ $breakpoints: (
   }
 
   .lesson_title {
+    margin-left: auto;
+    margin-right: auto;
     padding: 20px;
     text-decoration: underline;
   }
@@ -194,6 +200,8 @@ $breakpoints: (
 
 .formation_headsection {
   @include media-max("phone") {
+    height: 270px;
+
     .formation_sectionImg {
       width: 200px;
       height: 150px;
@@ -271,6 +279,11 @@ $breakpoints: (
     .lesson_h3 {
       font-size: 17px;
     }
+
+    .lesson_video {
+      width: 400px;
+      height: 250px;
+    }
   }
 }
 
@@ -282,12 +295,31 @@ $breakpoints: (
       width: 300px;
       height: 250px;
     }
+
+    .lesson_video {
+      width: 600px;
+      height: 350px;
+    }
   }
 }
 
 .formation_section {
   @include media-min("tablet-large") {
     margin-top: 150px;
+  }
+}
+
+.formation_section {
+  @include media-min("desktop") {
+    position: relative;
+
+    .formation_headsection {
+      flex-direction: row;
+      justify-content: center;
+      width: 70%;
+      margin-right: auto;
+      margin-left: 25px;
+    }
   }
 }
 
@@ -298,6 +330,7 @@ $breakpoints: (
     justify-content: center;
 
     .sections_side {
+      align-self: flex-start;
       width: 25%;
       margin-left: 10px;
     }
