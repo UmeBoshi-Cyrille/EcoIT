@@ -40,6 +40,14 @@ class PageController extends AbstractController
         ]);
     }
 
+    #[Route('/student/apply', name: 'student_apply')]
+    public function studentApply(): Response
+    {
+        return $this->render('login/apply_student.html.twig', [
+            'apply' => 'Apply',
+        ]);
+    }
+
     #[Route('/home/contact', name: 'contact')]
     public function contact(): Response
     {
@@ -47,6 +55,15 @@ class PageController extends AbstractController
             'contact' => 'Contact',
         ]);
     }
+
+    #[Route('/student/contact', name: 'student_contact')]
+    public function studentContact(): Response
+    {
+        return $this->render('student/contact_student.html.twig', [
+            'contact' => 'Contact',
+        ]);
+    }
+
 
     #[Route('/home/formations', name: 'formations')]
     public function formation(): Response
