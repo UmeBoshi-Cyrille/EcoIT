@@ -44,9 +44,7 @@ form,
 }
 
 section {
-  height: 1200px;
   width: 100%;
-  padding-top: 50px;
 }
 
 .contact_h2 {
@@ -130,6 +128,9 @@ input[type="file"] {
 
 section {
   @include media-max("phone") {
+    margin-top: 150px;
+    margin-bottom: 50px;
+
     .cancel_box {
       flex-direction: column;
       justify-content: center;
@@ -157,7 +158,8 @@ section {
 
 section {
   @include media-min("phone") {
-    height: 1350px;
+    margin-top: 150px;
+    margin-bottom: 50px;
 
     .contact_h2 {
       font-size: 45px;
@@ -176,8 +178,7 @@ section {
 
 section {
   @include media-min("tablet") {
-    height: 1400px;
-    padding-top: 100px;
+    margin-top: 150px;
 
     .contact_h2 {
       font-size: 50px;
@@ -192,7 +193,7 @@ section {
 
 section {
   @include media-min("tablet-large") {
-    padding-top: 150px;
+    padding-top: 100px;
 
     .contact_wrapper {
       max-width: 750px;

@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Formation{% endblock %}
+{% block title %}Formations{% endblock %}
 {% block styleSheets %}
-    <link rel="stylesheet" href="{{ asset('assets/studentPages/formations_student.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/instructor_adminPages/formations_instructor.css') }}">
 {% endblock %}
 
 {% block header %}
-    {% include "student/_header_student.html.twig" %}
+    {% include "instructor/_header_instructor.html.twig" %}
 {% endblock %}
 
 {% block main %}
@@ -14,7 +14,7 @@
     <section class="section_head">
         <div class="formation_headwrapper">
             <div class="formation_pagetitle">
-                <h2 class="formation_h2 key_ftdw font-f1">Nos Formations</h2>
+                <h2 class="formation_h2 key_ftdw font-f1">Vos Formations</h2>
             </div>
             <form class="searchbar" action=""> 
             {# {{ path('search') }} #}
@@ -29,9 +29,7 @@
     </section>
     <section class="section_main">
         <div class="formation_globalwrapper">
-            <a href=""></a>
             <div class="formation_container key_bg2">
-                <a class="formation_a" href=""></a>
                 <div class="formation_title">
                     <h3 class="formation_h3 key_ftdw font-f1">Titre de la Formation</h3>
                     <p class="key_ftdw font-f2">Phrase explicative de la formation</p>
@@ -39,15 +37,28 @@
                 <div class="instructor_imgbox">
                     <img class="instructor_img" src="" alt="photo de l'auteur de la formation">
                 </div>
-                <button class="preview_button" 
-                        id="preview-btn" 
-                        onclick="dropdownPreview()"
-                        style="background-color: #57cc99">
-                    <h4 class="preview_h4 key_ftdw font-f2">Aperçu</h4>
-                </button>
-            </div>
-            <div class="preview_box key_bg1" id="preview_dropdown">
-                <p class="preview_p key_ftdw font-f3">contenu aperçu de la formation</p>
+                <div class="instructor_buttons">
+                    <a href="">
+                        <img src="{{ asset('assets/storage/icons/read.png') }}" 
+                            alt="icone livre ouvert" 
+                            title="icon by : https://icons8.com/icon/jlJLS7OQV1fO/lire">
+                    </a>
+                    <a href="">
+                        <img src="{{ asset('assets/storage/icons/edition.png') }}" 
+                            alt="icone crayon" 
+                            title="icon by : https://icons8.com/icon/Zs4SrvznrdHQ/stylo-à-bille">
+                    </a>
+                    <a href="">
+                        <img src="{{ asset('assets/storage/icons/update.png') }}" 
+                            alt=" icone de mise à jour" 
+                            title="icon by : https://icons8.com/icon/35635/mises-à-jour-disponibles">
+                    </a>
+                    <a href="">
+                        <img src="{{ asset('assets/storage/icons/corbeille.png') }}" 
+                            alt="icone poubelle" 
+                            title="icon by : https://icons8.com/icon/9deX0HJ5iAFS/poubelle">
+                    </a>
+                </div>
             </div>
         </div>        
     </section>

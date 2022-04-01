@@ -4,7 +4,7 @@
         <h2 class="font-f1 key_ftdw">Les solutions web-écologique</h2>
     </div>
     <div class="hd_logobox key_bg3">
-        <a href="{{path('student_home')}}"><img class="hd_logo" src="{{ asset('assets/storage/logo/ecoIt2.png') }}" alt="logo-ecoIt"></a> 
+        <a href="{{path('admin_home')}}"><img class="hd_logo" src="{{ asset('assets/storage/logo/ecoIt2.png') }}" alt="logo-ecoIt"></a> 
     </div>
 </div>
 {% include "_modules/_switch.html.twig" %}
@@ -17,17 +17,14 @@
     <ul id="dropdown" class="hd-dropdownContent">
         <li class="hd-li1"></li>
         <li class="hd-li right font-f1">
-            <a class="key_ftdw" href="{{path('student_formations')}}">Formations</a>
+            <a class="key_ftdw" href="{{path('admin_home')}}">Accueil</a>
         </li>
         <li class="hd-li left font-f1">
-            <a class="key_ftdw" href="{{path('apply')}}">Postuler</a>             
+            <a class="key_ftdw" href="{{path('admin_instructors')}}">Instructeurs</a>             
         </li>
         <li class="hd-li right font-f1">
-            <a class="key_ftdw" href="{{path('contact')}}">Contact</a>   
+            <a class="key_ftdw" href="{{path('admin_students')}}">Apprenants</a>   
         </li>
-        <li class="hd-li hd_home-li left font-f1 key_bg3">
-            <a class="nav_a key_ftdw" href="{{path('subscribe')}}">S'incrire</a>           
-        </li><hr>
         <li class="hd-li hd_home-li right font-f1 key_bg3">
             <a class="nav_a key_ftdw" href="{{path('home')}}">Déconnexion</a>              
         </li>
