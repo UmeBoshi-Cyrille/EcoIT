@@ -16,8 +16,7 @@
             <div class="formation_pagetitle">
                 <h2 class="formation_h2 key_ftdw font-f1">Nos Formations</h2>
             </div>
-            <form class="searchbar" action=""> 
-            {# {{ path('search') }} #}
+            <form class="searchbar" action="{{ path('search') }}"> 
                 <input class="input_searchtext" type="text" name="search">
                 <button class="button_search" type="submit">
                     <img class="search_icon" src="{{ asset('assets/storage/icons/search.png') }}" 
@@ -28,28 +27,32 @@
         </div>
     </section>
     <section class="section_main">
-        <div class="formation_globalwrapper">
-            <div class="formation_container key_bg2">
-                <div class="formation_title">
-                    <h3 class="formation_h3 key_ftdw font-f1">Titre de la Formation</h3>
-                    <p class="key_ftdw font-f2">Phrase explicative de la formation</p>
+    {% for formation in formations %}
+        {% if formation.isPublished %}
+            <div class="formation_globalwrapper">
+                <div class="formation_container key_bg2">
+                    <div class="formation_title">
+                        <h3 class="formation_h3 key_ftdw font-f1">{{ formation.title }}</h3>
+                        <p class="key_ftdw font-f2">{{ formation.sentence }}</p>
+                    </div>
+                    <div class="instructor_imgbox">
+                        <img class="instructor_img" src="" alt="photo de l'auteur de la formation">
+                    </div>
+                    <button class="preview_button" 
+                            id="preview-btn" 
+                            onclick="dropdownPreview()"
+                            style="background-color: #57cc99">
+                        <h4 class="preview_h4 key_ftdw font-f2">Aperçu</h4>
+                    </button>
                 </div>
-                <div class="instructor_imgbox">
-                    <img class="instructor_img" src="" alt="photo de l'auteur de la formation">
+                <div class="preview_box key_bg1" id="preview_dropdown">
+                    <p class="preview_p key_ftdw font-f3">{{ formation.description }}</p>
                 </div>
-                <button class="preview_button" 
-                        id="preview-btn" 
-                        onclick="dropdownPreview()"
-                        style="background-color: #57cc99">
-                    <h4 class="preview_h4 key_ftdw font-f2">Aperçu</h4>
-                </button>
-            </div>
-            <div class="preview_box key_bg1" id="preview_dropdown">
-                <p class="preview_p key_ftdw font-f3">contenu aperçu de la formation</p>
-            </div>
-        </div>        
+            </div>    
+        {% endif %}
+	{% endfor %}    
     </section>
-{% endblock %}
+{% endblock %} 
 
 {% block javascripts %}
     <script src="{{ asset('assets/js/formations_visite.js') }}"></script>

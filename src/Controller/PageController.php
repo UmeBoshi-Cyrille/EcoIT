@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Formation;
+use App\Repository\FormationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -49,10 +51,12 @@ class PageController extends AbstractController
     }
 
     #[Route('/home/formations', name: 'formations')]
-    public function formation(): Response
+    public function formation(FormationRepository $formationRepository): Response
     {
+        $formations = $formationRepository->findAll();
+
         return $this->render('base/formations.html.twig', [
-            'formations' => 'Formations',
+            'formations' => $formations
         ]);
     }
 }

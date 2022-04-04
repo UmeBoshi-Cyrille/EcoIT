@@ -12,7 +12,13 @@
 {% block main %}
 
     <section>
-        
+        <div class="main_wrapper">
+            {{ form_start(form) }}
+                <div class="form_error">
+                    {{ form_errors(form) }}
+                </div>
+            {{ form_end(form)}}
+        </div>
     </section>
 
 {% endblock %}

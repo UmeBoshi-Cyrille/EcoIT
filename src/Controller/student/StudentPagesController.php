@@ -1,7 +1,10 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\student;
 
+use App\Repository\FormationRepository;
+use App\Repository\LessonRepository;
+use App\Repository\SectionsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -33,18 +36,28 @@ class StudentPagesController extends AbstractController
     }
 
     #[Route('/student/formations', name: 'student_formations')]
-    public function studentFormations(): Response
+    public function studentFormations(FormationRepository $formationRepository): Response
     {
+        $studentFormations = $formationRepository->findAll();
+
         return $this->render('student/formations_student.html.twig', [
-            'formations' => 'Formations',
+            'student_formations' => $studentFormations
         ]);
     }
 
-    #[Route('/student/formation', name: 'student_formation')]
-    public function studentFormation(): Response
+    #[Route('/student/formation/{id}', name: 'student_formation')]
+    public function studentFormation(int $id,
+        FormationRepository $formationRepository,
+        SectionsRepository $sectionsRepository,
+        LessonRepository $lessonRepository
+    ): Response
     {
+
+        $studentFormation = $formationRepository->find($id);
+        // $studentSections = $sectionsRepository-
+
         return $this->render('student/formation_student.html.twig', [
-            'formation' => 'Formation',
+            'student_formation' => $studentFormation,
         ]);
     }
 

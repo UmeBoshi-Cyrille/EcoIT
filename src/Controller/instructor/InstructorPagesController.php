@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\instructor;
 
+use App\Entity\Formation;
+use App\Repository\FormationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,17 +19,19 @@ class InstructorPagesController extends AbstractController
     }
 
     #[Route('/instructor/formations', name: 'instructor_formations')]
-    public function instructorFormations(): Response
+    public function instructorFormations(FormationRepository $formationRepository): Response
     {
+        $instructorFormations = $formationRepository->findAll();
+
         return $this->render('instructor/formations_instructor.html.twig', [
-            'formations' => 'Formations',
+            'instructor_formations' => $instructorFormations
         ]);
     }
 
-    #[Route('/instructor/formation', name: 'instructor_formation')]
-    public function instructorFormation(): Response
+    #[Route('/instructor/formation/insert', name: 'formation_insert')]
+    public function formationInsert(): Response
     {
-        return $this->render('instructor/formation_instructor.html.twig', [
+        return $this->render('instructor/formation_insert.html.twig', [
             'formation' => 'Formation',
         ]);
     }
