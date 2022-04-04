@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Subscribe{% endblock %}
+{% block title %}Inscription{% endblock %}
 {% block styleSheets %}
     <link rel="stylesheet" href="{{ asset('assets/pages/subscribe.css') }}">
 {% endblock %}
@@ -24,19 +24,18 @@
                          title="title="https://www.freepng.fr"">
                 </div>
                 <div class="form_box key_bg3">
-                    <form action="" method="post">
-                        <label class ="key_ftdw font-f2" for="pseudo"><strong>Pseudonyme</strong></label>
-                        <input type="text" id="pseudo" name="_pseudo" placeholder="Pseudonyme"/>
-                        <label class ="key_ftdw font-f2" for="username"><strong>Email</strong></label>
-                        <input type="text" id="username" name="_username" placeholder="Enter Email"/>
-                        <label class ="key_ftdw font-f2" for="password"><strong>Password</strong></label>
-                        <input type="password"  id="password" name="_password" placeholder="Enter Password"/>
-                        {# Control Url user is redirected to on success 
-                        <input type="hidden" name="_target_path" value="/account"/> #}
+                    {{ form_start(registrationForm, { 'attr' : { 'class': 'form' } }) }}
+                        {{ form_row(registrationForm.pseudo, { label: 'Pseudo', 'attr' : { 'class': 'input key_ftdw font-f2', 'placeholder': 'Pseudonyme' } }) }}
+                        {{ form_row(registrationForm.email, { label: 'Email', 'attr' : { 'class': 'input key_ftdw font-f2', 'placeholder': 'Enter Email' } }) }}
+                        {{ form_row(registrationForm.plainPassword, {
+                            label: 'Password', 
+                            'attr' : { 'class': 'input key_ftdw font-f2', 'placeholder': 'Enter password' } }) }}
+                        {# {{ form_row(registrationForm.Rgpd-Consent) }} #}
+
                         <button class="button_subscribe key_ftw font-f3 key_bggreen" type="submit">S'incrire</button>
-                    </form>
+                    {{ form_end(registrationForm) }}
                     <div class="cancel_box key_bg1">
-                        <form action="{{path('home')}}">
+                        <form action="{{path('home')}}" class="form">
                             <button class="button_cancel key_ftw font-f3 key_bgred" type="submit">Cancel</button>
                         </form>
                         <span class="span_connexion key_ftdw font-f3"><a class="key_ftd" href="{{path('login')}}">Connexion</a></span>

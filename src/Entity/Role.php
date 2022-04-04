@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\RolesRepository;
+use App\Repository\RoleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: RolesRepository::class)]
-class Roles
+#[ORM\Entity(repositoryClass: RoleRepository::class)]
+class Role
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,6 +18,9 @@ class Roles
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $description;
+
+    #[ORM\Column(type: 'boolean', nullable: true)]
+    private $isPublished;
 
     public function getId(): ?int
     {
@@ -44,6 +47,18 @@ class Roles
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getIsPublished(): ?bool
+    {
+        return $this->isPublished;
+    }
+
+    public function setIsPublished(?bool $isPublished): self
+    {
+        $this->isPublished = $isPublished;
 
         return $this;
     }

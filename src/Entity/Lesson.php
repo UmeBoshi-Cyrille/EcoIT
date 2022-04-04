@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\LessonRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: LessonRepository::class)]
@@ -27,13 +25,9 @@ class Lesson
     #[ORM\Column(type: 'boolean', nullable: true)]
     private $isPublished;
 
-    #[ORM\OneToMany(mappedBy: 'lesson', targetEntity: Sections::class, orphanRemoval: true)]
-    private $sections;
-
-    public function __construct()
-    {
-        $this->sections = new ArrayCollection();
-    }
+    #[ORM\ManyToOne(targetEntity: Section::class, inversedBy: 'lessons')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $section;
 
     public function getId(): ?int
     {
@@ -88,32 +82,14 @@ class Lesson
         return $this;
     }
 
-    /**
-     * @return Collection<int, Sections>
-     */
-    public function getSections(): Collection
+    public function getSection(): ?Section
     {
-        return $this->sections;
+        return $this->section;
     }
 
-    public function addSection(Sections $section): self
+    public function setSection(?Section $section): self
     {
-        if (!$this->sections->contains($section)) {
-            $this->sections[] = $section;
-            $section->setLesson($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSection(Sections $section): self
-    {
-        if ($this->sections->removeElement($section)) {
-            // set the owning side to null (unless already changed)
-            if ($section->getLesson() === $this) {
-                $section->setLesson(null);
-            }
-        }
+        $this->section = $section;
 
         return $this;
     }

@@ -47,9 +47,7 @@ class StudentPagesController extends AbstractController
 
     #[Route('/student/formation/{id}', name: 'student_formation')]
     public function studentFormation(int $id,
-        FormationRepository $formationRepository,
-        SectionsRepository $sectionsRepository,
-        LessonRepository $lessonRepository
+        FormationRepository $formationRepository
     ): Response
     {
 

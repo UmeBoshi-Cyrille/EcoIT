@@ -8,12 +8,12 @@ $breakpoints: (
 );
 
 section,
-form,
 .subscribe_wrapper,
 .subscribe_title,
 .subscribe_container,
 .img-box,
 .form_box,
+.form,
 .cancel_box {
   display: flex;
 }
@@ -32,11 +32,11 @@ section,
 }
 
 section,
-form,
 .subscribe_wrapper,
 .subscribe_container,
 .img-box,
-.form_box {
+.form_box,
+.form {
   flex-direction: column;
 }
 
@@ -68,7 +68,7 @@ section {
   width: 100%;
 }
 
-form {
+.form {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -76,6 +76,7 @@ form {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"] {
   width: 100%;
   margin-top: 5px;
@@ -89,6 +90,10 @@ input[type="password"] {
 
 input {
   width: 80%;
+}
+
+.hidden-row {
+  display: none;
 }
 
 .button_subscribe,
