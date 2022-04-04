@@ -23,4 +23,18 @@ class SearchController extends AbstractController
             'formations' => $formations
         ]);
     }
+
+    #[Route('/student/search', name: 'student_search')]
+    public function studentSearchFormation(
+        Request $request,
+        FormationRepository $formationRepository)
+    {
+
+        $search = $request->query->get('search');
+        $formations = $formationRepository->searchFormation($search);
+
+        return $this->render('student/studentSearch_formations.html.twig', [
+            'formations' => $formations
+        ]);
+    }
 }

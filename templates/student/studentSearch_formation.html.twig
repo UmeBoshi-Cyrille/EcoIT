@@ -16,8 +16,7 @@
             <div class="formation_pagetitle">
                 <h2 class="formation_h2 key_ftdw font-f1">Nos Formations</h2>
             </div>
-            <form class="searchbar" action="{{ path('search') }}"> 
-            {# {{ path('search') }} #}
+            <form class="searchbar" action="{{ path('student_search') }}"> 
                 <input class="input_searchtext" type="text" name="search">
                 <button class="button_search" type="submit">
                     <img class="search_icon" src="{{ asset('assets/storage/icons/search.png') }}" 
