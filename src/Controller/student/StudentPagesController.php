@@ -5,10 +5,12 @@ namespace App\Controller\student;
 use App\Repository\FormationRepository;
 use App\Repository\LessonRepository;
 use App\Repository\SectionsRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[IsGranted("ROLE_STUDENT")]
 class StudentPagesController extends AbstractController
 {
     #[Route('/student/home', name: 'student_home')]

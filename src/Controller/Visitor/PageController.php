@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Visitor;
 
 use App\Entity\Formation;
 use App\Repository\FormationRepository;
