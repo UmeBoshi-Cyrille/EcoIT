@@ -24,7 +24,6 @@
                 </div>
                 <div class="form_box key_bg3">
                     <form method="post">
-                    {# action="{{ path('login') }}" #}
                         {% if error %}
                             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                         {% endif %}

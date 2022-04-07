@@ -25,25 +25,17 @@
                 </div>
                 <div class="form_box key_bg3">
                     {{ form_start(registrationForm, { 'attr' : { 'class': 'form' } }) }}
-                        <div class="input1">
-                            {{ form_row(registrationForm.name, { label: 'name', 'attr' : { 'class': 'input1 key_ftdw font-f2', 'placeholder': 'Naom' } }) }}
-                            {{ form_row(registrationForm.surname, { label: 'surname', 'attr' : { 'class': 'input1 key_ftdw font-f2', 'placeholder': 'Prénom' } }) }}
-                            {{ form_row(registrationForm.description, { label: 'Description', 'attr' : { 'class': 'input1 key_ftdw font-f2', 'placeholder': 'Description' } }) }}
-                            {{ form_row(registrationForm.photo, { label: 'Photo', 'attr' : { 'class': 'input1 key_ftdw font-f2', 'placeholder': 'Photo Profil' } }) }}
-                        </div>
-                        
                         {{ form_row(registrationForm.pseudo, { label: 'Pseudo', 'attr' : { 'class': 'input key_ftdw font-f2', 'placeholder': 'Pseudonyme' } }) }}    
                         {{ form_row(registrationForm.email, { label: 'Email', 'attr' : { 'class': 'input key_ftdw font-f2', 'placeholder': 'Enter Email' } }) }}
                         {{ form_row(registrationForm.plainPassword, {
                             label: 'Password', 
                             'attr' : { 'class': 'input key_ftdw font-f2', 'placeholder': 'Enter password' } }) }}
                         {# {{ form_row(registrationForm.Rgpd-Consent) }} #}
-
-                        <button class="button_subscribe key_ftw font-f3 key_bggreen" type="submit">S'incrire</button>
+                        <button type="submit" class="button_subscribe key_ftw font-f3 key_bggreen">S'incrire</button>
                     {{ form_end(registrationForm) }}
                     <div class="cancel_box key_bg1">
                         <form action="{{path('home')}}" class="form">
-                            <button class="button_cancel key_ftw font-f3 key_bgred" type="submit">Cancel</button>
+                            <button class="button_cancel key_ftw font-f3 key_bgred" type="button">Cancel</button>
                         </form>
                         <span class="span_connexion key_ftdw font-f3"><a class="key_ftd" href="{{path('login')}}">Connexion</a></span>
                     </div>

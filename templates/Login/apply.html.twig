@@ -25,9 +25,6 @@
                 </div>
                 <div class="form_box key_bg3">
                     {{ form_start(applyForm, { 'attr' : { 'class': 'form' } }) }}
-                        <div class="input1">
-                            {{ form_row(applyForm.pseudo, { label: 'Pseudo', 'attr' : { 'class': 'input1 key_ftdw font-f2', 'placeholder': 'Pseudonyme' } }) }}
-                        </div>
                         {{ form_row(applyForm.name, { label: 'Name', 'attr' : { 'class': 'key_ftdw font-f2', 'placeholder': 'Nom' } }) }}
                         {{ form_row(applyForm.surname, { label: 'Surname', 'attr' : { 'class': 'key_ftdw font-f2', 'placeholder': 'Prénom' } }) }}
                         {{ form_row(applyForm.email, { label: 'Email', 'attr' : { 'class': 'key_ftdw font-f2', 'placeholder': 'Enter Email' } }) }}
@@ -36,7 +33,7 @@
                             'attr' : { 'class': 'input key_ftdw font-f2', 'placeholder': 'Enter password' } }) }}
                         {# {{ form_row(applyForm.Rgpd-Consent) }} #}
                         {{ form_row(applyForm.description, { label: 'Description', 'attr' : { 'class': 'key_ftdw font-f2', 'placeholder': 'Description' } }) }}
-                        {{ form_row(applyForm.photo, { label: 'Photo', 'attr' : { 'class': 'key_ftdw font-f2 key_bg1', 'placeholder': 'Photo Profil' } }) }}
+                        {# {{ form_row(applyForm.imageFile, { label: 'Photo', 'attr' : { 'class': 'key_ftdw font-f2 key_bg1', 'placeholder': 'Photo Profil' } }) }} #}
                         <button class="button_apply key_ftw font-f3 key_bggreen" type="submit">Postuler</button>
                     {{ form_end(applyForm) }}
                     <div class="cancel_box key_bg1">
