@@ -31,7 +31,7 @@ class AdminPagesController extends AbstractController
     #[Route('/admin/students', name: 'admin_students')]
     public function adminStudents(): Response
     {
-        return $this->render('NotYet/notYet_admin.html.twig', [
+        return $this->render('base/notYet.html.twig', [
             'students' => 'Students',
         ]);
     }

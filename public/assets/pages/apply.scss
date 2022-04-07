@@ -44,7 +44,6 @@ form,
 }
 
 section {
-  height: 1200px;
   width: 100%;
   padding-top: 50px;
 }
@@ -79,22 +78,32 @@ form {
   padding: 20px 0 20px 0;
 }
 
+.input1 {
+  display: none;
+}
+
+input[type="email"],
 input[type="text"],
 input[type="password"],
 textarea,
 input[type="file"] {
   width: 100%;
+  max-width: 100%;
   margin-top: 5px;
   margin: 5px auto 15px auto;
   padding: 12px 0 12px 8px;
   border: none;
-  //   display: inline-block;
   box-sizing: border-box;
   z-index: 0;
 }
 
+input[type="file"] {
+  margin-bottom: 20px;
+}
+
 .button_apply {
   width: 80%;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }

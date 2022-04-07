@@ -34,13 +34,13 @@ class PageController extends AbstractController
     //     ]);
     // }
 
-    #[Route('/home/apply', name: 'apply')]
-    public function apply(): Response
-    {
-        return $this->render('login/apply.html.twig', [
-            'apply' => 'Apply',
-        ]);
-    }
+    // #[Route('/home/apply', name: 'apply')]
+    // public function apply(): Response
+    // {
+    //     return $this->render('login/apply.html.twig', [
+    //         'apply' => 'Apply',
+    //     ]);
+    // }
 
     #[Route('/home/contact', name: 'contact')]
     public function contact(): Response

@@ -61,11 +61,11 @@ class StudentPagesController extends AbstractController
         ]);
     }
 
-    #[Route('/student/notYet', name: 'notYet')]
+    #[Route('/student/account', name: 'student_account')]
     public function notYet(): Response
     {
-        return $this->render('NotYet/notYet_student.html.twig', [
-            'not' => 'NotYet',
+        return $this->render('base/notYet.html.twig', [
+            'account' => 'Account',
         ]);
     }
 }

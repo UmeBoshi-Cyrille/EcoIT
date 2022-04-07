@@ -1,24 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}home{% endblock %}
+{% block title %}new Formation{% endblock %}
 {% block styleSheets %}
     <link rel="stylesheet" href="{{ asset('assets/instructor_adminPages/formation_instructor.css') }}">
 {% endblock %}
 
 {% block header %}
-    {% include "instructor/_header_instructor.html.twig" %}
+    {% include "base/_header.html.twig" %}
 {% endblock %}
 
 {% block main %}
 
     <section>
         <div class="main_wrapper">
-            {{ form_start(form) }}
-                <div class="form_error">
-                    {{ form_errors(form) }}
-                </div>
-            {{ form_end(form)}}
+            {{ include('formation/_form.html.twig') }}
         </div>
     </section>
 
+    <a href="{{ path('app_formation_index') }}">back to list</a>
 {% endblock %}

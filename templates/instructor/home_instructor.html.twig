@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block header %}
-    {% include "instructor/_header_instructor.html.twig" %}
+    {% include "base/_header.html.twig" %}
 {% endblock %}
 
 {% block main %}
@@ -26,7 +26,7 @@
                 <div class="home_box">
                     <ul class="home_ul">
                         <li><a class="home_a key_bgwd key_ftdw font-f2" href="{{path('instructor_formations')}}">Vos Formations</a></li>
-                        <li><a class="home_a key_bgwd key_ftdw font-f2" href="{{path('formation_insert')}}">Créer une formation</a></li>
+                        <li><a class="home_a key_bgwd key_ftdw font-f2" href="{{path('formation_new')}}">Créer une formation</a></li>
                         <li><a class="home_a1 a2 key_bgwd key_ftdw font-f2" href="{{path('home')}}">Se déconnecter</a></li>
                     </ul>
                 </div>

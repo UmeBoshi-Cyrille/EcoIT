@@ -44,6 +44,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'boolean', nullable: true)]
     private $RGPDConsent;
 
+    #[ORM\OneToOne(inversedBy: 'user', targetEntity: Photo::class, cascade: ['persist', 'remove'])]
+    private $photo;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -185,4 +188,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function getPhoto(): ?Photo
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(?Photo $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    
 }
