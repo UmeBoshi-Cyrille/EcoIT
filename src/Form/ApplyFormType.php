@@ -14,6 +14,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ApplyFormType extends AbstractType
 {
@@ -24,6 +25,7 @@ class ApplyFormType extends AbstractType
             ->add('name', TextType::class)
             ->add('surname', TextType::class)
             ->add('description', TextareaType::class)
+            ->add('imageFile', VichImageType::class)
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Visitor;
 
 use App\Repository\FormationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

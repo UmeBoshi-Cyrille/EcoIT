@@ -19,7 +19,7 @@
             <form class="searchbar" action=""> 
             {# {{ path('search') }} #}
                 <input class="input_searchtext" type="text" name="search">
-                <button class="button_search" type="submit">
+                <button class="button_search" type="submit" >
                     <img class="search_icon" src="{{ asset('assets/storage/icons/search.png') }}" 
                         alt="Une loupe de recherche"
                         title="Icon by MD Badsha Meah : https://freeicons.io/profile/3335">
@@ -28,42 +28,43 @@
         </div>
     </section>
     <section class="section_main">
-        <div class="formation_globalwrapper">
-            <div class="formation_container key_bg2">
-                <div class="formation_title">
-                    <h3 class="formation_h3 key_ftdw font-f1">NOM PRENOM</h3>
-                    <p class="key_ftdw font-f2">Adresse Email</p>
-                </div>
-                <div class="instructor_imgbox">
-                    <img class="instructor_img" src="" alt="photo de l'instructeur">
-                </div>
-                
-                <div class="instructor_buttons">
-                    <form class="intructor_input key_bg1" action="">
-                        <label class ="key_ftdw font-f2" for="username">
-                            <span class="instructor_span">Open Account :</span>
-                            <input class="instructor_checkbox" type="checkbox" name="remember">
-                        </label>
-                    </form>
-                    <button class="preview_button key_bg3" 
-                        id="preview-btn" 
-                        onclick="dropdownPreview()"
-                        style="background-color: #57cc99">
-                        <img src="{{ asset('assets/storage/icons/read.png') }}" 
-                            alt="icone livre ouvert" 
-                            title="icon by : https://icons8.com/icon/jlJLS7OQV1fO/lire">
-                    </button>
-                    <a  class="key_bg3" href="">
+        {% for instructor in instructors %}    
+            <div class="formation_globalwrapper">
+                <div class="formation_container key_bg2">
+                    <div class="formation_title">
+                        <h3 class="formation_h3 key_ftdw font-f1">{{instructor.name}} {{instructor.surname}}</h3>
+                        <p class="key_ftdw font-f2">{{ instructor.email}}</p>
+                    </div>
+                    <div class="instructor_imgbox">
+                        <img class="instructor_img" src="{{ vich_uploader_asset(instructor, 'imageFile') }}" alt="photo de l'instructeur">
+                    </div>
+                    <a class="delete_button key_bg3" href="{{ path('admin_instructor_delete', {'id': instructor.id}) }}">
                         <img src="{{ asset('assets/storage/icons/corbeille.png') }}" 
                             alt="icone poubelle" 
                             title="icon by : https://icons8.com/icon/9deX0HJ5iAFS/poubelle">
                     </a>
+                    {# <div class="instructor_buttons key_bg3">
+                        <form class="intructor_input key_bg1" action="">
+                            <label class ="key_ftdw font-f2" for="username">
+                                <span class="instructor_span">Open Account :</span>
+                                <input class="instructor_checkbox" type="checkbox" name="remember">
+                            </label>
+                        </form>
+                    </div> #}
                 </div>
-            </div>
-            <div class="preview_box key_bg1" id="preview_dropdown">
-                <p class="preview_p key_ftdw font-f3">Description de l'instructeur</p>
-            </div>
-        </div>        
+                <button class="preview_button key_bg3" 
+                        id="preview-btn" 
+                        onclick="dropdown(this)"
+                        style="background-color: #57cc99">
+                    <img src="{{ asset('assets/storage/icons/read.png') }}" 
+                        alt="icone livre ouvert" 
+                        title="icon by : https://icons8.com/icon/jlJLS7OQV1fO/lire">
+                </button>
+                <div class="preview-box key_bg1" id="preview_dropdown">
+                    <p class="preview_p key_ftdw font-f3">{{ instructor.description }}</p>
+                </div>
+            </div>        
+        {% endfor %}
     </section>
 {% endblock %}
 

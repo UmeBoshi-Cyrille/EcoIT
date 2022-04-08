@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Visitor;
 
 use App\Entity\User;
-use App\Form\RegistrationFormType;
+use App\Form\ApplyFormType;
 use App\Security\UserAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,17 +14,17 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-class RegistrationController extends AbstractController
+class ApplyController extends AbstractController
 {
-    #[Route('/register', name: 'register')]
-    public function register(Request $request, 
+    #[Route('/home/apply', name: 'apply')]
+    public function apply(Request $request, 
     UserPasswordHasherInterface $userPasswordHasher, 
     UserAuthenticatorInterface $userAuthenticator, 
     UserAuthenticator $authenticator, 
     EntityManagerInterface $entityManager): Response
     {
         $user = new User();
-        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form = $this->createForm(ApplyFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -40,15 +40,16 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
             // do anything else you need here, like send an email
 
-            return $userAuthenticator->authenticateUser(
-                $user,
-                $authenticator,
-                $request
-            );
+            // return $userAuthenticator->authenticateUser(
+            //     $user,
+            //     $authenticator,
+            //     $request
+            // );
+            return $this->redirectToRoute('home');
         }
 
-        return $this->render('Login/subscribe.html.twig', [
-            'registrationForm' => $form->createView(),
+        return $this->render('Login/apply.html.twig', [
+            'applyForm' => $form->createView(),
         ]);
     }
 }

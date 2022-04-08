@@ -17,9 +17,9 @@ $breakpoints: (
 .formation_title,
 .instructor_imgbox,
 .instructor_img,
+.delete_button,
+.preview_button,
 .intructor_input,
-.instructor_buttons,
-.instructor_buttons a,
 .preview_button,
 .preview_box {
   display: flex;
@@ -46,9 +46,9 @@ $breakpoints: (
 .formation_globalwrapper,
 .formation_container,
 .instructor_img,
+.delete_button,
+.preview_button,
 .intructor_input,
-.instructor_buttons,
-.instructor_buttons a,
 .preview_button,
 .preview_box {
   align-items: center;
@@ -63,9 +63,9 @@ $breakpoints: (
 .button_search,
 .instructor_imgbox,
 .instructor_img,
+.delete_button,
+.preview_button,
 .intructor_input,
-.instructor_buttons,
-.instructor_buttons a,
 .preview_button,
 .preview_box {
   justify-content: center;
@@ -140,6 +140,7 @@ $breakpoints: (
   margin-bottom: 50px;
 
   .formation_globalwrapper {
+    position: relative;
     transition: 0.3s ease;
     margin-bottom: 30px;
   }
@@ -181,68 +182,60 @@ $breakpoints: (
     text-align: center;
   }
 
-  .instructor_buttons {
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-    width: 252px;
-    height: 30px;
-  }
-
   .intructor_input {
     margin-right: 10px;
     width: 150px;
     height: 30px;
   }
 
-  .instructor_checkbox {
-    width: 20px;
-    height: 20px;
-    border-radius: 50px;
-  }
-
-  .instructor_buttons button {
-    width: 42px;
-    height: 32px;
-  }
-
-  .instructor_buttons a {
-    width: 40px;
-    height: 30px;
-  }
-
-  .intructor_input,
-  .instructor_buttons button,
-  .instructor_buttons a {
+  .delete_button,
+  .preview_button {
     border: 1px solid;
     transition: 0.3s ease;
   }
 
-  .instructor_buttons button:hover,
-  .instructor_buttons a:hover {
+  .delete_button:hover,
+  .preview_button:hover {
     transform: scale(1.1);
   }
 
-  .preview_button img,
-  .instructor_buttons img {
+  .delete_button img,
+  .preview_button img {
     width: 25px;
     height: 25px;
   }
 
-  .preview_box {
+  .delete_button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 40px;
+    height: 30px;
+  }
+
+  .preview_button {
+    position: absolute;
+    top: 133px;
+    right: 45px;
+    width: 42px;
+    height: 32px;
+  }
+
+  .preview-box {
     display: none;
-    width: 95%;
-    height: 120px;
     margin-left: auto;
     margin-right: auto;
-    overflow: auto;
+    width: 95%;
+    padding: 8px;
+    box-shadow: 1px 1px 6px #000;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    box-shadow: 1px 1px 6px #000;
   }
 
   .preview_p {
+    display: block;
     padding: 20px;
+    z-index: 2;
   }
 
   .showPreview {
@@ -291,6 +284,11 @@ $breakpoints: (
       margin-left: 5px;
       margin-top: 0;
     }
+
+    .preview_button {
+      top: 113px;
+      right: 45px;
+    }
   }
 }
 
@@ -329,9 +327,14 @@ $breakpoints: (
       left: 0;
     }
 
-    .instructor_buttons {
+    .delete_button {
       bottom: 10px;
       right: 10px;
+    }
+
+    .preview_button {
+      top: 108px;
+      right: 50px;
     }
   }
 }
