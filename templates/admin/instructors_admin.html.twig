@@ -38,30 +38,15 @@
                     <div class="instructor_imgbox">
                         <img class="instructor_img" src="{{ vich_uploader_asset(instructor, 'imageFile') }}" alt="photo de l'instructeur">
                     </div>
-                    <a class="delete_button key_bg3" href="{{ path('admin_instructor_delete', {'id': instructor.id}) }}">
-                        <img src="{{ asset('assets/storage/icons/corbeille.png') }}" 
-                            alt="icone poubelle" 
-                            title="icon by : https://icons8.com/icon/9deX0HJ5iAFS/poubelle">
-                    </a>
-                    {# <div class="instructor_buttons key_bg3">
-                        <form class="intructor_input key_bg1" action="">
-                            <label class ="key_ftdw font-f2" for="username">
-                                <span class="instructor_span">Open Account :</span>
-                                <input class="instructor_checkbox" type="checkbox" name="remember">
-                            </label>
-                        </form>
-                    </div> #}
-                </div>
-                <button class="preview_button key_bg3" 
-                        id="preview-btn" 
-                        onclick="dropdown(this)"
-                        style="background-color: #57cc99">
-                    <img src="{{ asset('assets/storage/icons/read.png') }}" 
-                        alt="icone livre ouvert" 
-                        title="icon by : https://icons8.com/icon/jlJLS7OQV1fO/lire">
-                </button>
-                <div class="preview-box key_bg1" id="preview_dropdown">
-                    <p class="preview_p key_ftdw font-f3">{{ instructor.description }}</p>
+                    <div class="instructor_buttons">
+                        <a class="_button key_bg3" 
+                            style="background-color: #57cc99"
+                            href="{{ path('admin_instructor_update', {'id': instructor.id }) }}">
+                            <img src="{{ asset('assets/storage/icons/edition.png') }}" 
+                                alt="icone livre ouvert" 
+                                title="icon by : https://icons8.com/icon/Zs4SrvznrdHQ/stylo-à-bille">
+                        </a>
+                    </div>
                 </div>
             </div>        
         {% endfor %}

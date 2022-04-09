@@ -6,7 +6,7 @@ use App\Form\InstructorType;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\BrowserKit\Request;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -38,27 +38,31 @@ class InstructorController extends AbstractController
         return $this->redirectToRoute('admin_instructors');
     }
 
-    // #[Route('/activate', name: 'instructor_activation')]
-    public function updateRoles($id, 
+    #[Route('/instructor/update/{id}', name: 'admin_instructor_update')]
+    public function updateRole(
+        $id, 
         UserRepository $userRepository, 
         Request $request, 
         EntityManagerInterface $entityManager):Response
     {
         $role = $userRepository->find($id);
 
-        $userRoleForm = $this->createForm(InstructorType::class, $role);
+        $instructorForm = $this->createForm(InstructorType::class, $role);
 
-        $userRoleForm->handleRequest($request);
+        $instructorForm->handleRequest($request);
 
-        if ($userRoleForm->isSubmitted() && $userRoleForm->isValid()) {
+        if ($instructorForm->isSubmitted() && $instructorForm->isValid()) {
             $entityManager->persist($role);
             $entityManager->flush();
 
             $this->addFlash('success', 'Modification réussie !');
 
-            return $this->redirectToRoute('admin/instructors_admin.html.twig', [
-                'userRoleForm' => $userRoleForm
-            ]);
+            return $this->redirectToRoute('admin_instructors');
         }
+
+        return $this->render('admin/instructor_update.html.twig', [
+            'instructor' => $role,
+            'instructorForm' => $instructorForm->createView()
+        ]);
     }
 }
