@@ -29,7 +29,7 @@
     </section>
 
     <section class="section_main">
-        {% for instructor in instructors %}  
+        {% for instructor in instructors|sort((a, b) => a.name <=> b.name) |sort((a, b) => a.roles <=> b.roles) %}  
             {% if instructor.name %}
                 <div class="formation_globalwrapper">
                 {% if instructor.hasRole('ROLE_INSTRUCTOR', 'ROLE_STUDENT') %}
