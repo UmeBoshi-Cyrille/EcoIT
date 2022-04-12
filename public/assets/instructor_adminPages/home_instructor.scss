@@ -49,8 +49,6 @@ $breakpoints: (
 
 .homeInstructor_section {
   height: 75vh;
-  margin-top: 100px;
-  margin-bottom: 50px;
 
   .home_wrapper {
     width: 95%;
@@ -67,11 +65,6 @@ $breakpoints: (
 
   .img-box {
     padding: 20px 0 20px 0;
-  }
-
-  .home_img {
-    width: 100%;
-    height: 200px;
   }
 
   .home_ul {
@@ -108,6 +101,30 @@ $breakpoints: (
   }
 }
 
+@mixin media-max($_key) {
+  @media screen and(max-width: map-get($breakpoints, $_key)) {
+    & {
+      @content;
+    }
+  }
+}
+
+.homeInstructor_section {
+  @include media-max("phone") {
+    margin-top: 250px;
+    margin-bottom: 150px;
+
+    .home_h2 {
+      font-size: 30px;
+    }
+
+    .home_img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
 @mixin media-min($_key) {
   @media screen and(min-width: map-get($breakpoints, $_key)) {
     & {
@@ -118,8 +135,8 @@ $breakpoints: (
 
 .homeInstructor_section {
   @include media-min("phone") {
-    margin-top: 250px;
-    margin-bottom: 100px;
+    margin-top: 300px;
+    margin-bottom: 175px;
 
     .home_h2 {
       font-size: 30px;
@@ -134,11 +151,24 @@ $breakpoints: (
 
 .homeInstructor_section {
   @include media-min("tablet") {
-    margin-top: 250px;
-
+    margin-top: 350px;
     .home_img {
       width: 600px;
       height: 400px;
+    }
+  }
+}
+
+.homeInstructor_section {
+  @include media-min("tablet-large") {
+    margin-top: 400px;
+    .home_img {
+      width: 600px;
+      height: 400px;
+    }
+
+    .home_h2 {
+      font-size: 40px;
     }
   }
 }

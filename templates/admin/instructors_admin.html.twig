@@ -28,27 +28,33 @@
         </div>
     </section>
     <section class="section_main">
-        {% for instructor in instructors %}    
-            <div class="formation_globalwrapper">
-                <div class="formation_container key_bg2">
-                    <div class="formation_title">
-                        <h3 class="formation_h3 key_ftdw font-f1">{{instructor.name}} {{instructor.surname}}</h3>
-                        <p class="key_ftdw font-f2">{{ instructor.email}}</p>
+    
+        {% for instructor in instructors %}  
+            {% if instructor.name %}
+                <div class="formation_globalwrapper">
+                    {% if is_granted('ROLE_INSTRUCTOR') %}
+                        <div class="formation_container key_bg4">
+                    {% else %}
+                        <div class="formation_container key_bg2">
+                    {% endif %}
+                        <div class="formation_title">
+                            <h3 class="formation_h3 key_ftdw font-f1">{{instructor.name}} {{instructor.surname}}</h3>
+                        </div>
+                        <div class="instructor_imgbox">
+                            <img class="instructor_img" src="{{ vich_uploader_asset(instructor, 'imageFile') }}" alt="photo de l'instructeur">
+                        </div>
+                        <div class="instructor_buttons">
+                            <a class="_button key_bg3" 
+                                style="background-color: #57cc99"
+                                href="{{ path('admin_instructor_update', {'id': instructor.id }) }}">
+                                <img src="{{ asset('assets/storage/icons/edition.png') }}" 
+                                    alt="icone livre ouvert" 
+                                    title="icon by : https://icons8.com/icon/Zs4SrvznrdHQ/stylo-à-bille">
+                            </a>
+                        </div>
                     </div>
-                    <div class="instructor_imgbox">
-                        <img class="instructor_img" src="{{ vich_uploader_asset(instructor, 'imageFile') }}" alt="photo de l'instructeur">
-                    </div>
-                    <div class="instructor_buttons">
-                        <a class="_button key_bg3" 
-                            style="background-color: #57cc99"
-                            href="{{ path('admin_instructor_update', {'id': instructor.id }) }}">
-                            <img src="{{ asset('assets/storage/icons/edition.png') }}" 
-                                alt="icone livre ouvert" 
-                                title="icon by : https://icons8.com/icon/Zs4SrvznrdHQ/stylo-à-bille">
-                        </a>
-                    </div>
-                </div>
-            </div>        
+                </div>        
+            {% endif %}  
         {% endfor %}
     </section>
 {% endblock %}
