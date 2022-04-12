@@ -65,4 +65,18 @@ class InstructorController extends AbstractController
             'instructorForm' => $instructorForm->createView()
         ]);
     }
+
+    #[Route('/instructors/search', name: 'admin_instructors_search')]
+    public function adminInstructorSearch(
+        Request $request,
+        UserRepository $userRepository)
+    {
+
+        $search = $request->query->get('search');
+        $users = $userRepository->searchUser($search); 
+        
+        return $this->render('admin/instructors-search_admin.html.twig', [
+            'instructors' => $users
+        ]);
+    }
 }
