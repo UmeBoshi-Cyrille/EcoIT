@@ -18,7 +18,7 @@
                         <p class="key_ftdw font-f2">{{ instructor.email}}</p>
                     </div>
                     <div class="instructor_imgbox">
-                        <img class="instructor_img" src="{{ vich_uploader_asset(instructor, 'imageFile') }}" alt="photo de l'instructeur">
+                        <img class="instructor_img" src="{{ vich_uploader_asset(instructor, 'imageFile') }}" alt="{{ instructor.imageName }}">
                     </div>
                     <a class="delete_button key_bg3" href="{{ path('admin_instructor_delete', {'id': instructor.id}) }}">
                         <img src="{{ asset('assets/storage/icons/corbeille.png') }}" 
