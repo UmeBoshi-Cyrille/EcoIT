@@ -28,7 +28,6 @@ class ApplyFormType extends AbstractType
             ->add('name', TextType::class)
             ->add('surname', TextType::class)
             ->add('description', TextareaType::class)
-            ->add('imageName', TextType::class)
             ->add('imageFile', VichImageType::class)
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
