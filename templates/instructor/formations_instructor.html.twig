@@ -28,6 +28,41 @@
         </div>
     </section>
     <section class="section_main">
+        {% for formation in instructor_formations %}
+            <div class="formation_globalwrapper">
+                <div class="formation_container key_bg2">
+                    <div class="formation_title">
+                        <h3 class="formation_h3 key_ftdw font-f1">Titre de la Formation</h3>
+                        <p class="key_ftdw font-f2">Phrase explicative de la formation</p>
+                    </div>
+                    <div class="instructor_imgbox">
+                        <img class="instructor_img" src="" alt="photo de l'auteur de la formation">
+                    </div>
+                    <div class="instructor_buttons">
+                        <a href="">
+                            <img src="{{ asset('assets/storage/icons/read.png') }}" 
+                                alt="icone livre ouvert" 
+                                title="icon by : https://icons8.com/icon/jlJLS7OQV1fO/lire">
+                        </a>
+                        <a href="">
+                            <img src="{{ asset('assets/storage/icons/edition.png') }}" 
+                                alt="icone crayon" 
+                                title="icon by : https://icons8.com/icon/Zs4SrvznrdHQ/stylo-à-bille">
+                        </a>
+                        <a href="">
+                            <img src="{{ asset('assets/storage/icons/update.png') }}" 
+                                alt=" icone de mise à jour" 
+                                title="icon by : https://icons8.com/icon/35635/mises-à-jour-disponibles">
+                        </a>
+                        <a href="">
+                            <img src="{{ asset('assets/storage/icons/corbeille.png') }}" 
+                                alt="icone poubelle" 
+                                title="icon by : https://icons8.com/icon/9deX0HJ5iAFS/poubelle">
+                        </a>
+                    </div>
+                </div>
+            </div>        
+        {% endfor %}
         <div class="formation_globalwrapper">
             <div class="formation_container key_bg2">
                 <div class="formation_title">

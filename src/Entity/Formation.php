@@ -39,9 +39,13 @@ class Formation
     #[ORM\OneToMany(mappedBy: 'formation', targetEntity: Section::class, orphanRemoval: true)]
     private $sections;
 
+    #[ORM\OneToMany(mappedBy: 'formation', targetEntity: Lessons::class, orphanRemoval: true)]
+    private $lessons;
+
     public function __construct()
     {
         $this->sections = new ArrayCollection();
+        $this->lessons = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -157,6 +161,36 @@ class Formation
             // set the owning side to null (unless already changed)
             if ($section->getFormation() === $this) {
                 $section->setFormation(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Lessons>
+     */
+    public function getLessons(): Collection
+    {
+        return $this->lessons;
+    }
+
+    public function addLesson(Lessons $lesson): self
+    {
+        if (!$this->lessons->contains($lesson)) {
+            $this->lessons[] = $lesson;
+            $lesson->setFormation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLesson(Lessons $lesson): self
+    {
+        if ($this->lessons->removeElement($lesson)) {
+            // set the owning side to null (unless already changed)
+            if ($lesson->getFormation() === $this) {
+                $lesson->setFormation(null);
             }
         }
 

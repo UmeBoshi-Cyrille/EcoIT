@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\LessonRepository;
+use App\Repository\LessonsRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: LessonRepository::class)]
-class Lesson
+#[ORM\Entity(repositoryClass: LessonsRepository::class)]
+class Lessons
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -16,18 +16,21 @@ class Lesson
     #[ORM\Column(type: 'string', length: 255)]
     private $title;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $video;
+
     #[ORM\Column(type: 'text')]
     private $content;
 
-    #[ORM\Column(type: 'datetime')]
+    #[ORM\Column(type: 'datetime', nullable: true)]
     private $publishedAt;
 
     #[ORM\Column(type: 'boolean', nullable: true)]
     private $isPublished;
 
-    #[ORM\ManyToOne(targetEntity: Section::class, inversedBy: 'lessons')]
+    #[ORM\ManyToOne(targetEntity: Formation::class, inversedBy: 'lessons')]
     #[ORM\JoinColumn(nullable: false)]
-    private $section;
+    private $formation;
 
     public function getId(): ?int
     {
@@ -42,6 +45,18 @@ class Lesson
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getVideo(): ?string
+    {
+        return $this->video;
+    }
+
+    public function setVideo(?string $video): self
+    {
+        $this->video = $video;
 
         return $this;
     }
@@ -63,7 +78,7 @@ class Lesson
         return $this->publishedAt;
     }
 
-    public function setPublishedAt(\DateTimeInterface $publishedAt): self
+    public function setPublishedAt(?\DateTimeInterface $publishedAt): self
     {
         $this->publishedAt = $publishedAt;
 
@@ -82,14 +97,14 @@ class Lesson
         return $this;
     }
 
-    public function getSection(): ?Section
+    public function getFormation(): ?Formation
     {
-        return $this->section;
+        return $this->formation;
     }
 
-    public function setSection(?Section $section): self
+    public function setFormation(?Formation $formation): self
     {
-        $this->section = $section;
+        $this->formation = $formation;
 
         return $this;
     }

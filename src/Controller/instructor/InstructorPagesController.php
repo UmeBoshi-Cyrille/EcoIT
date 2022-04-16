@@ -22,14 +22,4 @@ class InstructorPagesController extends AbstractController
             'home' => 'Home',
         ]);
     }
-
-    #[Route('/formations', name: 'instructor_formations')]
-    public function instructorFormations(FormationRepository $formationRepository): Response
-    {
-        $instructorFormations = $formationRepository->findAll();
-
-        return $this->render('instructor/formations_instructor.html.twig', [
-            'instructor_formations' => $instructorFormations
-        ]);
-    }
 }
