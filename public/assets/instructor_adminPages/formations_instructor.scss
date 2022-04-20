@@ -11,6 +11,7 @@ $breakpoints: (
 .formation_pagetitle,
 .searchbar,
 .button_search,
+.btnCreate,
 .section_main,
 .formation_globalwrapper,
 .formation_container,
@@ -38,6 +39,7 @@ $breakpoints: (
 .formation_pagetitle,
 .searchbar,
 .button_search,
+.btnCreate,
 .section_main,
 .formation_globalwrapper,
 .formation_container,
@@ -50,6 +52,7 @@ $breakpoints: (
 .formation_pagetitle,
 .searchbar,
 .button_search,
+.btnCreate,
 .instructor_imgbox,
 .instructor_buttons,
 .instructor_buttons a {
@@ -100,7 +103,8 @@ $breakpoints: (
     border-radius: 50px;
   }
 
-  .button_search {
+  .button_search,
+  .btnCreate {
     height: 40px;
     width: 40px;
     margin-left: 5px;
@@ -110,6 +114,21 @@ $breakpoints: (
   .search_icon {
     height: 30px;
     width: 30px;
+  }
+
+  .btnCreate {
+    border: 1px solid black;
+    transition: 0.3s ease;
+  }
+
+  .btnCreate:hover {
+    transform: scale(1.1);
+    z-index: 1;
+  }
+
+  .btnCreate img {
+    width: 30px;
+    height: 30px;
   }
 }
 

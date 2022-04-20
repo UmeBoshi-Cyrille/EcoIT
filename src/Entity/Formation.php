@@ -24,9 +24,6 @@ class Formation
     #[ORM\Column(type: 'text')]
     private $description;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $author;
-
     #[ORM\Column(type: 'datetime')]
     private $publishedAt;
 
@@ -36,16 +33,15 @@ class Formation
     #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'formations')]
     private $category;
 
-    #[ORM\OneToMany(mappedBy: 'formation', targetEntity: Section::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'formation', targetEntity: Section::class)]
     private $sections;
 
-    #[ORM\OneToMany(mappedBy: 'formation', targetEntity: Lessons::class, orphanRemoval: true)]
-    private $lessons;
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'formations')]
+    private $instructor;
 
     public function __construct()
     {
         $this->sections = new ArrayCollection();
-        $this->lessons = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -85,18 +81,6 @@ class Formation
     public function setDescription(string $description): self
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getAuthor(): ?string
-    {
-        return $this->author;
-    }
-
-    public function setAuthor(string $author): self
-    {
-        $this->author = $author;
 
         return $this;
     }
@@ -167,32 +151,14 @@ class Formation
         return $this;
     }
 
-    /**
-     * @return Collection<int, Lessons>
-     */
-    public function getLessons(): Collection
+    public function getInstructor(): ?User
     {
-        return $this->lessons;
+        return $this->instructor;
     }
 
-    public function addLesson(Lessons $lesson): self
+    public function setInstructor(?User $instructor): self
     {
-        if (!$this->lessons->contains($lesson)) {
-            $this->lessons[] = $lesson;
-            $lesson->setFormation($this);
-        }
-
-        return $this;
-    }
-
-    public function removeLesson(Lessons $lesson): self
-    {
-        if ($this->lessons->removeElement($lesson)) {
-            // set the owning side to null (unless already changed)
-            if ($lesson->getFormation() === $this) {
-                $lesson->setFormation(null);
-            }
-        }
+        $this->instructor = $instructor;
 
         return $this;
     }

@@ -28,9 +28,9 @@ class Lessons
     #[ORM\Column(type: 'boolean', nullable: true)]
     private $isPublished;
 
-    #[ORM\ManyToOne(targetEntity: Formation::class, inversedBy: 'lessons')]
+    #[ORM\ManyToOne(targetEntity: Section::class, inversedBy: 'lessons')]
     #[ORM\JoinColumn(nullable: false)]
-    private $formation;
+    private $section;
 
     public function getId(): ?int
     {
@@ -97,14 +97,14 @@ class Lessons
         return $this;
     }
 
-    public function getFormation(): ?Formation
+    public function getSection(): ?Section
     {
-        return $this->formation;
+        return $this->section;
     }
 
-    public function setFormation(?Formation $formation): self
+    public function setSection(?Section $section): self
     {
-        $this->formation = $formation;
+        $this->section = $section;
 
         return $this;
     }

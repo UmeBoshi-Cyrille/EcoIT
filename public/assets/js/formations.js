@@ -1,76 +1,77 @@
-let $collectionHolder;
-let $addNewItem = $('<a href="#" class="btnAdd">Add new Section</a>');
-let $removeButton = $('<a href="#" class="btnAdd">Remove</a>');
-let $panel = $(
-  '<div class="panel panel_section"><div class="panel-heading"></div></div>'
+let $collectionHolderSection;
+let $addNewSection = $(
+  '<button class="btn btnAddSection key_bg2">Add Section</button>'
 );
-let $panelBody = $('<div class="panel-body"></div>');
-let $panelFooter = $('<div class="panel_footer"></div>');
 
 $(document).ready(function () {
-  // get the collectionHolder;
-  $collectionHolder = $("#section_list");
+  $collectionHolderSection = $("#section_list");
+  $collectionHolderSection.append($addNewSection);
+  $collectionHolderSection.data(
+    "index",
+    $collectionHolderSection.find(".panel_section").length
+  );
 
-  // append the add new item to the collectionHolder
-  $collectionHolder.append($addNewItem);
-
-  $collectionHolder.data("index", $collectionHolder.find(".panel").length);
-
-  // add remove button
-  $collectionHolder.find(".panel").each(function (item) {
-    addRemoveButton($(this));
+  $collectionHolderSection.find(".panel_section").each(function () {
+    $addRemoveSection($(this));
   });
 
-  // handle the click
-  $addNewItem.click(function (e) {
+  $addNewSection.click(function (e) {
     e.preventDefault();
-    // create a new form and append it to collectionHolder
-    addNewForm();
+    addNewSection();
   });
 });
 
-// Add new item
-function addNewForm() {
-  // getting the prototype
-  let prototype = $collectionHolder.data("prototype");
-  // get the index
-  let index = $collectionHolder.data("index");
-
-  // create the form
+function addNewSection() {
+  let prototype = $collectionHolderSection.data("prototype");
+  let index = $collectionHolderSection.data("index");
   let newForm = prototype;
 
-  newForm = newForm.replace(/_name_/g, index);
+  newForm = newForm.replace(/_sec_/g, index);
 
-  $collectionHolder.data("index", index++);
+  $collectionHolderSection.data("index", index++);
 
-  //create the panel
+  let $panelSection = $(
+    '<div class="panel_section panel_sectionWrap key_bg2"><div class="panel_heading"></div></div>'
+  );
 
-  // create the panel body and append it to the form
-  $panelBody.append(newForm);
-  $panel.append($panelBody);
+  let $panelBody = $('<div class="panel_body"></div>').append(newForm);
 
-  addRemoveButton($panel);
+  $panelSection.append($panelBody);
 
-  // append the panel to the $addNewItem
-  $addNewItem.before($panel);
+  addRemoveSection($panelSection);
+
+  $addNewSection.before($panelSection);
 }
 
-// Remove item.
-function addRemoveButton($panel) {
+/**
+ * adds a remove button to the panel that is passed in the parameter
+ * @param $panelSection
+ */
+function addRemoveSection($panelSection) {
   // create remove button
+  let $removeButton = $(
+    '<button class="btn btnRemoveSection key_bg3"></button>'
+  );
+  let $imageDelete = $('<img src="" alt="icone ajouter" title="icon by : ">');
+  $imageDelete.attr("src", "../../assets/storage/icons/corbeille.png");
+  $removeButton.append($imageDelete);
 
-  $panelFooter.append($removeButton);
+  // appending the removebutton to the panel footer
+  let $panelFooter = $('<div class="panel_footer key_bg2"></div>').append(
+    $removeButton
+  );
 
-  // handle click event
+  // handle the click event of the remove button
   $removeButton.click(function (e) {
     e.preventDefault();
+    // gets the parent of the button that we clicked on "the panel" and animates it
+    // after the animation is done the element (the panel) is removed from the html
     $(e.target)
-      .parents(".panel")
+      .parents(".panel_section")
       .slideUp(1000, function () {
         $(this).remove();
       });
   });
-
-  // append footer to panel
-  $panel.append($panelFooter);
+  // append the footer to the panel
+  $panelSection.append($panelFooter);
 }

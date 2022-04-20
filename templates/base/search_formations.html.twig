@@ -28,28 +28,28 @@
     </section>
     <section class="section_main">
     {% for formation in formations %}
-        {% if formation.isPublished %}
-            <div class="formation_globalwrapper">
-                <div class="formation_container key_bg2">
-                    <div class="formation_title">
-                        <h3 class="formation_h3 key_ftdw font-f1">{{ formation.title }}</h3>
-                        <p class="key_ftdw font-f2">{{ formation.sentence }}</p>
-                    </div>
-                    <div class="instructor_imgbox">
-                        <img class="instructor_img" src="" alt="photo de l'auteur de la formation">
+       {% if formation.isPublished %}
+                <div class="formation_globalwrapper">
+                    <div class="formation_container key_bg2">
+                        <div class="formation_title">
+                            <h3 class="formation_h3 key_ftdw font-f1">{{ formation.title }}</h3>
+                            <p class="key_ftdw font-f2">{{ formation.sentence }}</p>
+                        </div>
+                        <div class="instructor_imgbox">
+                            <img class="instructor_img" src="" alt="photo de l'auteur de la formation">
+                        </div>
                     </div>
                     <button class="preview_button" 
                             id="preview-btn" 
-                            onclick="dropdownPreview()"
+                            onclick="dropdown(this)"
                             style="background-color: #57cc99">
                         <h4 class="preview_h4 key_ftdw font-f2">Aperçu</h4>
                     </button>
-                </div>
-                <div class="preview_box key_bg1" id="preview_dropdown">
-                    <p class="preview_p key_ftdw font-f3">{{ formation.description }}</p>
-                </div>
-            </div>    
-        {% endif %}
+                    <div class="preview-box key_bg1" id="preview_dropdown">
+                        <p class="preview_p key_ftdw font-f3">{{ formation.description }}</p>
+                    </div>
+                </div>    
+            {% endif %}
 	{% endfor %}    
     </section>
 {% endblock %} 

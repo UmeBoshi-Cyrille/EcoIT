@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[IsGranted("ROLE_STUDENT")]
+#[Route('/student')]
 class StudentPagesController extends AbstractController
 {
     #[Route('/student/home', name: 'student_home')]
@@ -52,7 +53,6 @@ class StudentPagesController extends AbstractController
         FormationRepository $formationRepository
     ): Response
     {
-
         $studentFormation = $formationRepository->find($id);
         // $studentSections = $sectionsRepository-
 

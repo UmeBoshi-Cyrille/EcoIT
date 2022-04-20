@@ -39,19 +39,19 @@ class SearchController extends AbstractController
         ]);
     }
 
-//     /**
-//     * @Route("/searh-results/{search}",name="search_results")
-//     */
-//     public function results($search, ArticleRepository $articleRepository)
-//     {
-//         // méthode pour Optimisation de l'URL pour Référencement (SEO)
-//         $articles = $articleRepository->searchArticle($search);
+   #[Route('/instructor/search', name: 'instructor_search')]
+    public function instructorSearchFormation(
+        Request $request,
+        FormationRepository $formationRepository)
+    {
 
-//        return $this->render('search_articles.html.twig', [
-//            'articles' => $articles,
-//            'search' => $search
-//        ]); 
-//     }
+        $search = $request->query->get('search');
+        $formations = $formationRepository->searchFormation($search);
+
+        return $this->render('instructor/instructorSearch_formations.html.twig', [
+            'searchInstructorFormations' => $formations
+        ]);
+    }
 
 
 //    /**

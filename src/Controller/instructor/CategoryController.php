@@ -32,9 +32,6 @@ class CategoryController extends AbstractController
         ]);
     }
 
-     /**
-     * @Route("/admin/category/{id}/delete", name="admin_category_delete")
-     */
     #[Route('/category/{id}/delete', name: 'delete_category')]
     public function deleteCategory($id, CategoryRepository $categoryRepository, EntityManagerInterface $entityManager)
     {
@@ -49,10 +46,7 @@ class CategoryController extends AbstractController
         return $this->redirectToRoute('');
     }
 
-
-    /**
-     * @Route("/admin/category/insert", name="admin_category_insert")
-     */
+    #[Route('/category/new', name: 'new_category')]
     public function insertCategory(Request $request, EntityManagerInterface $entityManager)
     {
         $category = new Category();
@@ -66,7 +60,7 @@ class CategoryController extends AbstractController
 
             $this->addFlash('success', 'Création réussie !');
 
-            return $this->redirectToRoute('admin_categories');
+            return $this->redirectToRoute('categoryList');
         }
 
         return $this->render('', [
@@ -74,9 +68,7 @@ class CategoryController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/admin/category/{id}/update", name="admin_category_update")
-     */
+    #[Route('/category/{id}/update', name: 'update_category')]
     public function updateCategory($id, CategoryRepository $categoryRepository, Request $request, EntityManagerInterface $entityManager)
     {
         $category = $categoryRepository->find($id);
@@ -90,7 +82,7 @@ class CategoryController extends AbstractController
 
             $this->addFlash('success', 'Modification réussie !');
 
-            return $this->redirectToRoute('admin_categories'); // redirection
+            return $this->redirectToRoute('categoryList'); // redirection
         }
 
         return $this->render('', [

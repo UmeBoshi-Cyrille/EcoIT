@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}new Formation{% endblock %}
+{% block title %}New Formation{% endblock %}
 {% block styleSheets %}
     <link rel="stylesheet" href="{{ asset('assets/instructor_adminPages/formation_instructor.css') }}">
 {% endblock %}
@@ -27,7 +27,7 @@
                 <div class="formation_wrapper">
                     {{ form_start(formationForm,{'attr' : { 'class': 'formationForm key_ftdw font-f2'} }) }}
                         {{ form_row(formationForm.title,{'attr' : { 'class': 'key_ftdw key_bgwd font-f2'} }) }}
-                        {{ form_row(formationForm.author,{'attr' : { 'class': 'key_ftdw key_bgwd font-f2'} } ) }}
+                        {{ form_row(formationForm.instructor,{'attr' : { 'class': 'key_ftdw key_bgwd font-f2'} } ) }}
                         {{ form_row(formationForm.sentence,{'attr' : { 'class': 'key_ftdw key_bgwd font-f2'} } ) }}
                         {{ form_row(formationForm.description,{'attr' : { 'class': 'key_ftdw key_bgwd font-f2'} } ) }}
                         <div class="form_wrap">
@@ -35,117 +35,12 @@
                             {{ form_row(formationForm.publishedAt,{'attr' : { 'class': 'key_ftdw key_bgwd font-f2'} } ) }}
                             {{ form_row(formationForm.isPublished,{'attr' : { 'class': 'key_ftdw key_bgwd font-f2'} } ) }}
                         </div>
-                        <div class="panel panel_section key_bg1" id="section_list" data-prototype="{{ form_widget(formationForm.sections.vars.prototype)|e('html_attr') }}">
-                            {% for section in formationForm.sections %}
-                                <div class="panel panel_sectionWrap key_bg2">
-                                    {# <div class="block_section key_bg5"></div> #}
-                                    <div class="panel_heading">
-                                        <h2 class="section_h2">Section: <strong>{{ section.vars.value.title }}</strong></h2>
-                                    </div>
-                                    <div class="panel_body">
-                                        {{ form_row(section.title,{'attr' : { 'class': 'key_ftdw key_bgwd font-f2'} }) }}
-                                    </div>
-                                </div>
-                                <div class="panel_lesson lesson_panel key_bg1" id="lesson_list" data-prototype="{{ form_widget(formationForm.lessons.vars.prototype)|e('html_attr') }}">
-                                    {% for lesson in formationForm.lessons %}
-                                        <div class="panel_lesson panel_lessonWrap">
-                                            {# <div class="block_lesson key_bg4"></div> #}
-                                            <div class="panel_lessonHead">
-                                                <h3 class="lesson_h3">Lesson : <strong>{{ lesson.vars.value.title }}</strong></h3>
-                                            </div>
-                                            <div class="panel_lessonBody">
-                                                {{ form_row(lesson.title,{'attr' : { 'class': 'key_ftdw key_bgwd font-f2'} }) }}
-                                                {{ form_row(lesson.video,{'attr' : { 'class': 'key_ftdw key_bgwd font-f2'} }) }}
-                                                {{ form_row(lesson.content,{'attr' : { 'class': 'key_ftdw key_bgwd font-f2'} }) }}
-                                                <div class="lesson_wrap">
-                                                    {{ form_row(lesson.publishedAt,{'attr' : { 'class': 'key_ftdw key_bgwd font-f2'} }) }}
-                                                    {{ form_row(lesson.isPublished,{'attr' : { 'class': 'key_ftdw key_bgwd font-f2'} }) }}
-                                                </div>
-                                            </div>
-                                            <div class="panel_lessonFooter">
-                                                <button class="btn btnAddLesson key_bg1">
-                                                    <img src="{{ asset('assets/storage/icons/add.png') }}" 
-                                                        alt="icone ajouter" 
-                                                        title="icon by : https://icons8.com/icon/37839/ajouter">
-                                                </button>
-                                                <button class="btn btnRemoveLesson key_bg1">
-                                                    <img src="{{ asset('assets/storage/icons/minus.png') }}" 
-                                                        alt="icone ajouter" 
-                                                        title="icon by : https://icons8.com/icon/11206/moins">
-                                                </button>
-                                            </div>
-                                            {# <div class="block_lesson key_bg4"></div> #}
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                                <div class="panel_footer key_bg2">
-                                    <button class="btn btnAddSection key_bg2">
-                                        <img src="{{ asset('assets/storage/icons/add.png') }}" 
-                                            alt="icone ajouter" 
-                                            title="icon by : https://icons8.com/icon/37839/ajouter">
-                                    </button>
-                                    <button class="btn btnRemoveSection key_bg2">
-                                        <img src="{{ asset('assets/storage/icons/minus.png') }}" 
-                                            alt="icone ajouter" 
-                                            title="icon by : https://icons8.com/icon/11206/moins">
-                                    </button>
-                                </div>
-                            {% endfor %}
-                        </div>
-                        <button class="formation_button" type="submit">></button>
+                        <button class="formation_button key_ftdw" type="submit">Submit</button>
                     {{ form_end(formationForm) }}
-                    {# <a href="">
-                        <img src="{{ asset('assets/storage/icons/add.png') }}" 
-                            alt="icone ajouter" 
-                            title="icon by : https://icons8.com/icon/jlJLS7OQV1fO/lire">
-                    </a> #}
                 </div>
-                <a class="path_return key_ftdw font-f3" href="{{ path('instructor_formations') }}">back to list</a>  
+                <a class="path_return key_ftdw font-f3" href="{{ path('instructor_formations_index') }}">back to list</a>  
             </div>
         </div>
     </section>
-        
-        {# {% for section in sections %}
-            <div class="formation_globalwrapper">
-                <div class="formation_container key_bg2">
-                    <div class="formation_title">
-                        <h3 class="formation_h3 key_ftdw font-f1">Titre de la Formation</h3>
-                        <p class="key_ftdw font-f2">Phrase explicative de la formation</p>
-                    </div>
-                    <div class="instructor_imgbox">
-                        <img class="instructor_img" src="" alt="photo de l'auteur de la formation">
-                    </div>
-                    <div class="instructor_buttons">
-                        <a href="">
-                            <img src="{{ asset('assets/storage/icons/read.png') }}" 
-                                alt="icone livre ouvert" 
-                                title="icon by : https://icons8.com/icon/jlJLS7OQV1fO/lire">
-                        </a>
-                        <a href="">
-                            <img src="{{ asset('assets/storage/icons/edition.png') }}" 
-                                alt="icone crayon" 
-                                title="icon by : https://icons8.com/icon/Zs4SrvznrdHQ/stylo-à-bille">
-                        </a>
-                        <a href="">
-                            <img src="{{ asset('assets/storage/icons/corbeille.png') }}" 
-                                alt="icone poubelle" 
-                                title="icon by : https://icons8.com/icon/9deX0HJ5iAFS/poubelle">
-                        </a>
-                        <a href="">
-                            <img src="{{ asset('assets/storage/icons/add.png') }}" 
-                                alt="icone ajouter" 
-                                title="icon by : https://icons8.com/icon/jlJLS7OQV1fO/lire">
-                        </a>
-                    </div>
-                </div>
-            </div>        
-        {% endfor %} #}
 {% endblock %}
 
-{% block javascripts %}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
-            crossorigin="anonymous">
-    </script>
-    {# <script src="{{ asset('assets/js/formation.js') }}"></script> #}
-{% endblock %}
